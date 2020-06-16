@@ -924,10 +924,12 @@ Synopsis: In this exercise, you will setup Azure Sentinel to point to a logging 
 
     ```PowerShell
     AzureDiagnostics
-    | where ruleName_s == 'UserRule_DenyAll' and Type != 'AzureMetric' and type_s == 'block' and direction_s == 'In' and Resource == 'WEBTRAFFICONLY' and OperationName == 'NetworkSecurityGroupCounters'
+    | where ruleName_s == 'UserRule_DenyAll' and Type != 'AzureMetric' and type_s == 'block' and direction_s == 'In' and OperationName == 'NetworkSecurityGroupCounters'
     | summarize AggregatedValue = sum(matchedConnections_d) by ruleName_s, primaryIPv4Address_s
     | where AggregatedValue > 0
     ```
+
+    > **Note**: If you wanted to target a specific NSG, you can add `and Resource == 'WEBTRAFFICONLY'` to the query
 
     ![In this screenshot, the alert simulation shows data after the query has been entered.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image97.png "Reviewing alert simulation data")
 
@@ -935,15 +937,15 @@ Synopsis: In this exercise, you will setup Azure Sentinel to point to a logging 
 
     > **Note**: Since the introduction of Azure Security Center and Sentinel, the backend logging has changed a few times as well as the way the calculations are done in the rule query (timespan in query vs outside query, etc.). The ultimate goal of this query is to find when a series of failed connection attempts have been made against a network security group and a specific deny rule. If for some reason the UI/backend has been modified since the last published lab, modify the query to accomplish this goal.
 
-5. Under **Map entities**, for the **IP**, select the **primaryIPv4Address_s** column.
+5. Under **Map entities**, for the **IP**, select the **primaryIPv4Address_s** column, then select **Add**
 
 6. Under **Query scheduling**, for the **Run query every** setting, type **5** minutes.
 
     >**Note**:  This is a lab and you want to see the results as quickly as possible. In a production environment, you may want to choose a different time threshold.
 
-7. For the **Lookup data from the last**, type **1** hours.
+7. For the **Lookup data from the last**, type **2** hours.
 
-8. Under **Alert threshold**, for the **Generate alert when number of query results**, enter **1**.
+8. Under **Alert threshold**, for the **Generate alert when number of query results**, enter **0**.
 
     > **Note:** We want to hit the threshold quickly for lab purposes. This query and value may not be appropriate for production and is only for learning purposes.
 
@@ -951,11 +953,13 @@ Synopsis: In this exercise, you will setup Azure Sentinel to point to a logging 
 
     ![A chart is displayed showing the current log data and the alert threshold. The red and blue line intersect in the chart.](media/2020-01-12-13-26-17.png "Results Preview")
 
-9. Select **Next: Automated response**, notice you have no playbooks to select yet.
+9. Select **Next: Incident settings**, notice you have no playbooks to select yet.
 
-10. Select **Next: Review**.
+10. Select **Next: Automated response**, notice you have no playbooks to select yet.
 
-11. Select **Create**.
+11. Select **Next: Review**.
+
+12. Select **Create**.
 
     > **Note**:  It may take a few minutes for the alert to fire.  You may need to run the PortScan script a few times from **paw-1**
 
