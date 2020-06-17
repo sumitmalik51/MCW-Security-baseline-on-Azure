@@ -409,7 +409,15 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
     - Select **Secret permissions**, and choose **Select all**.
 
     - Select **Certificate permissions**, and choose **Select all**.
+    
+     - To select your service principal account, click on **None selected**.
+    
+      <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image1.png"/><br/>
 
+    - In **Select a principal** pane, select your account and then click on **select**.
+    
+    <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image120.png"/> <br/>
+    
     - Select **OK**.
 
     - Select **Save**.
