@@ -400,7 +400,6 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
 
     - Select **Add New**.
 
-    - For the principal, select your account.
 
     - Select **Key permissions**, and choose **Select all**.
 
@@ -418,7 +417,7 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
     
         <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image120.png"/> <br/>
     
-    - Select **OK**.
+    - Select **ADD**.
 
     - Select **Save**.
 
