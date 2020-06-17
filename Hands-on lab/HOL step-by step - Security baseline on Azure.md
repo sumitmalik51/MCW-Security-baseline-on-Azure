@@ -400,7 +400,6 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
 
     - Select **Add New**.
 
-    - For the principal, select your account.
 
     - Select **Key permissions**, and choose **Select all**.
 
@@ -409,8 +408,16 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
     - Select **Secret permissions**, and choose **Select all**.
 
     - Select **Certificate permissions**, and choose **Select all**.
+    
+     - To select your service principal account, click on **None selected**.
+    
+        <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image1.png"/><br/>
 
-    - Select **OK**.
+    - In **Select a principal** pane, select your account and then click on **select**.
+    
+        <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image120.png"/> <br/>
+    
+    - Select **Add**.
 
     - Select **Save**.
 
@@ -522,21 +529,22 @@ Synopsis: In this exercise, attendees will learn how to migrate web application 
 
     ![In the Access policies screen, the + Add Access Policy button is selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image51.png "Add a new access policy")
 
-4. Choose **Select principal** field value. In the right-hand pane, type **AzureKeyVaultTest**. Select the item.
-
-5. Choose the **Select** button at the bottom.
-
-6. Select the **Secret permissions** drop-down, check the **Get** and **List** permissions.
+4. Select the **Secret permissions** drop-down, check the **Get** and **List** permissions.
 
     ![In the secret permissions drop down options, the Get and List operations are selected.](media/2019-12-19-08-40-27.png "Secret Permission Options")
 
-    Your selection summary should look like this.
+5. Choose **Select principal** field value. In the right-hand pane, type **AzureKeyVaultTest**. Select the item.
 
-    ![The AzureKeyVaultTest principal is selected and the secret permissions drop down list states there are two selected values.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image52.png "Configure Select principal settings")
+6. Choose the **Select** button at the bottom.
+
+    Your selection summary should look like this.
+    
+    <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image121.png"/> <br/>
 
 7. Select **Add** button.
 
 8. Select **Save** button at the top.
+
 
 ### Task 4: Install or verify NuGet Package
 
@@ -780,7 +788,7 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
       - Select **Save**.
 
-       ![Save is highlighted at the top, and two log items are selected below.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image60.png "Save the logs")
+       ![Save is highlighted at the top, and two log items are selected below.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image122.png "Save the logs")
 
        - Repeat for all remaining Network Security Groups.
 
