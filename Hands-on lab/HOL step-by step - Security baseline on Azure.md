@@ -417,7 +417,7 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
     
         <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image120.png"/> <br/>
     
-    - Select **ADD**.
+    - Select **Add**.
 
     - Select **Save**.
 
