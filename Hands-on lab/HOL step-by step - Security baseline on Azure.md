@@ -412,11 +412,11 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
     
      - To select your service principal account, click on **None selected**.
     
-      <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image1.png"/><br/>
+        <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image1.png"/><br/>
 
     - In **Select a principal** pane, select your account and then click on **select**.
     
-    <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image120.png"/> <br/>
+        <img src="images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image120.png"/> <br/>
     
     - Select **OK**.
 
