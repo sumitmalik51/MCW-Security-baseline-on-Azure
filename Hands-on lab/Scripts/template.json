@@ -902,8 +902,8 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat('db-1','/', 'dscExtension')]",
-      "apiVersion": "2015-05-01-preview",
+      "name": "[concat('db-1','/', 'csExtension')]",
+      "apiVersion": "2018-10-01",
       "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', 'db-1')]"
