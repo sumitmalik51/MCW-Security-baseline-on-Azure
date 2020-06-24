@@ -1,3 +1,23 @@
+function SSHBruteForce($ip, $count)
+{
+    $username = "root";
+    $password = "random";
+
+    for($i=0;$i-lt$count;$i++)
+    {
+        SSHLogin $ip $username "$password-$i";
+    }
+}
+
+function SSHLogin ($ip,$username, $password)
+{
+    $path = "c:\program files\putty\plink.exe"
+
+    start-process $path -ArgumentList "$username@$ip -pw $password"
+
+    end-process -Name "plink"
+}
+
 function Test-Port{   
 <#     
 .SYNOPSIS     
@@ -325,16 +345,6 @@ function SetupHosts()
 	}
 }
 
-InstallNotepadPP;
-
-SetupHosts;
-
-$computers = @("web-1","db-1");
-
-TestPort $computers 3389;
-
-TestPort $computers 1433;
-
 function Test-Port{   
 <#     
 .SYNOPSIS     
@@ -624,6 +634,24 @@ function TestPortRange($computers, $startport, $endport)
     }    
 }
 
+function InstallPutty()
+{
+    #check for executables...
+	$item = get-item "C:\Program Files\Putty\putty.exe" -ea silentlycontinue;
+	
+	if (!$item)
+	{
+		$downloadNotePad = "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi";
+
+        mkdir c:\temp -ea silentycontinue 
+		
+		#download it...		
+		Start-BitsTransfer -Source $DownloadNotePad -DisplayName Notepad -Destination "c:\temp\putty.msi"
+        
+        msiexec.exe /I c:\temp\Putty.msi /quiet
+	}
+}
+
 function InstallNotepadPP()
 {
 	#check for executables...
@@ -633,7 +661,7 @@ function InstallNotepadPP()
 	{
 		$downloadNotePad = "https://notepad-plus-plus.org/repository/7.x/7.5.4/npp.7.5.4.Installer.exe";
 
-        mkdir c:\temp
+        mkdir c:\temp -ea silentycontinue 
 		
 		#download it...		
 		Start-BitsTransfer -Source $DownloadNotePad -DisplayName Notepad -Destination "c:\temp\npp.exe"
@@ -659,14 +687,38 @@ function SetupHosts()
 	if (!$content.contains("db-1"))
 	{
 		add-content $path "10.1.0.4`tdb-1";
+    }
+    
+    if (!$content.contains("linux-1"))
+	{
+		add-content $path "10.0.0.5`tlinux-1";
 	}
 }
 
+# Exercise 1
+
 InstallNotepadPP;
+
+InstallPutty;
 
 SetupHosts;
 
-$computers = @("web-1","db-1");
+# Exercise 2
+SSHBruteForce "linux-1" 1000;
+
+# Exercise 3
+
+$computers = @("web-1","db-1","linux-1");
+
+while ($true)
+{
+    TestPort $computers 1433
+    TestPort $computers 80
+    TestPort $computers 443
+}
+
+# Exercise 4
+$computers = @("web-1","db-1","linux-1");
 
 #test RDP connectivity
 TestPort $computers 3389;
