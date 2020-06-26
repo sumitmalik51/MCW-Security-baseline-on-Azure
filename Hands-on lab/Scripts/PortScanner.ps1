@@ -714,28 +714,7 @@ TestPort $computers 1433;
 #test HTTP connectivity
 TestPort $computers 80;
 
-# Exercise 2
+# Exercise 5
 <#
 SSHBruteForce "linux-1" 1000;
-#>
-
-# Exercise 3
-
-<#
-$computers = @("web-1","db-1","linux-1");
-
-while ($true)
-{
-    TestPort $computers 1433
-    TestPort $computers 80
-    TestPort $computers 443
-}
-#>
-
-#Exercise 5
-
-<#
-$computers = @("web-1","db-1","linux-1");
-
-#TestPortRange $computers 80 443;
 #>
