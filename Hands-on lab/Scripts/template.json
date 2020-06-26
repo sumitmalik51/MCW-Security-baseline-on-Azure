@@ -459,7 +459,21 @@
       "apiVersion": "2017-06-01",
       "location": "[parameters('region')]",
       "properties": {
-        "securityRules": [ ]
+        "securityRules": [ 
+          {
+            "name": "default-allow-rdp",
+            "properties": {
+              "priority": 1030,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "3389"
+            }
+          }
+        ]
       },
       "dependsOn": [ ]
     },

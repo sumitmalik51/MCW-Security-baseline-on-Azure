@@ -15,7 +15,7 @@ function SSHLogin ($ip,$username, $password)
 
     start-process $path -ArgumentList "$username@$ip -pw $password"
 
-    end-process -Name "plink"
+    stop-process -Name "plink" -ea SilentlyContinue
 }
 
 function Test-Port{   
@@ -643,7 +643,7 @@ function InstallPutty()
 	{
 		$downloadNotePad = "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi";
 
-        mkdir c:\temp -ea silentycontinue 
+        mkdir c:\temp -ea silentlycontinue 
 		
 		#download it...		
 		Start-BitsTransfer -Source $DownloadNotePad -DisplayName Notepad -Destination "c:\temp\putty.msi"
@@ -661,7 +661,7 @@ function InstallNotepadPP()
 	{
 		$downloadNotePad = "https://notepad-plus-plus.org/repository/7.x/7.5.4/npp.7.5.4.Installer.exe";
 
-        mkdir c:\temp -ea silentycontinue 
+        mkdir c:\temp -ea silentlycontinue 
 		
 		#download it...		
 		Start-BitsTransfer -Source $DownloadNotePad -DisplayName Notepad -Destination "c:\temp\npp.exe"
@@ -695,7 +695,7 @@ function SetupHosts()
 	}
 }
 
-# Exercise 1
+# Exercise 4 - Securing the network
 
 InstallNotepadPP;
 
@@ -703,21 +703,6 @@ InstallPutty;
 
 SetupHosts;
 
-# Exercise 2
-SSHBruteForce "linux-1" 1000;
-
-# Exercise 3
-
-$computers = @("web-1","db-1","linux-1");
-
-while ($true)
-{
-    TestPort $computers 1433
-    TestPort $computers 80
-    TestPort $computers 443
-}
-
-# Exercise 4
 $computers = @("web-1","db-1","linux-1");
 
 #test RDP connectivity
@@ -729,8 +714,28 @@ TestPort $computers 1433;
 #test HTTP connectivity
 TestPort $computers 80;
 
-#TestPortRange $computers 80 443;
+# Exercise 2
+<#
+SSHBruteForce "linux-1" 1000;
+#>
 
-TestPort $computers 443;
+# Exercise 3
+
+<#
+$computers = @("web-1","db-1","linux-1");
+
+while ($true)
+{
+    TestPort $computers 1433
+    TestPort $computers 80
+    TestPort $computers 443
+}
+#>
+
+#Exercise 5
+
+<#
+$computers = @("web-1","db-1","linux-1");
 
 #TestPortRange $computers 80 443;
+#>

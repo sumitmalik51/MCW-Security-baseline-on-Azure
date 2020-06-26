@@ -52,14 +52,22 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 4: Install network watcher VM extension](#task-4-install-network-watcher-vm-extension)
     - [Task 5: Setup network packet capture](#task-5-setup-network-packet-capture)
     - [Task 6: Execute a port scan](#task-6-execute-a-port-scan)
-  - [Exercise 5: Azure Sentinel Logging and Reporting](#exercise-5-azure-sentinel-logging-and-reporting)
+  - [Exercise 5: Azure Security Center](#exercise-5-azure-security-center)
+    - [Task 1: Linux VM and Microsoft Monitoring Agent (MMA) Instal](#task-1-linux-vm-and-microsoft-monitoring-agent-mma-instal)
+    - [Task 2: Execute Brute Force Attack](#task-2-execute-brute-force-attack)
+    - [Task 2: Enable Change Tracking and Update Management](#task-2-enable-change-tracking-and-update-management)
+    - [Task 2: Review MMA Configuration](#task-2-review-mma-configuration)
+    - [Task 2: Adaptive Application Controls](#task-2-adaptive-application-controls)
+    - [Task 3: File Integrity Monitoring](#task-3-file-integrity-monitoring)
+    - [Task 4: Disk Encryption](#task-4-disk-encryption)
+  - [Exercise 6: Azure Sentinel Logging and Reporting](#exercise-6-azure-sentinel-logging-and-reporting)
     - [Task 1: Create a dashboard](#task-1-create-a-dashboard)
     - [Task 2: Create an Analytics alert](#task-2-create-an-analytics-alert)
     - [Task 3: Investigate a custom alert incident](#task-3-investigate-a-custom-alert-incident)
     - [Task 4: Create and run a playbook](#task-4-create-and-run-a-playbook)
     - [Task 5: Execute Jupyter Notebooks](#task-5-execute-jupyter-notebooks)
     - [Task 6: Creating Reports with Power BI](#task-6-creating-reports-with-power-bi)
-  - [Exercise 6: Using Compliance Tools (Azure Policy, Secure Score and Compliance Manager)](#exercise-6-using-compliance-tools-azure-policy-secure-score-and-compliance-manager)
+  - [Exercise 7: Using Compliance Tools (Azure Policy, Secure Score and Compliance Manager)](#exercise-7-using-compliance-tools-azure-policy-secure-score-and-compliance-manager)
     - [Task 1: Review a basic Azure Policy](#task-1-review-a-basic-azure-policy)
     - [Task 2: Review and create Azure Blueprints](#task-2-review-and-create-azure-blueprints)
     - [Task 3: Secure Score](#task-3-secure-score)
@@ -140,41 +148,39 @@ Synopsis: In this exercise, attendees will secure a Privileged Access Workstatio
 
     ![In the configuration window, port settings are listed, and Save is highlighted above them.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image10.png "Select Save")
 
-5. After a few minutes, you should see the states changed to **Resolved**.  If this does not occur due to UI changes, then browse back to the **Configured** tab.  
+5. After a few minutes, you should see the virtual machines moved to the **Configured** tab.
 
-   ![On the Virtual machines screen, several virtual machines have their State listed as Resolved.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image11.png "View the state change")
+    ![The virtual machines are now on the configured tab.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image11.png "The JIT Configured VMs are displayed")
 
 ### Task 2: Perform a JIT request
 
-1. Select the **Configured** tab. You should now see all the machines listed.
-
-2. Select the **paw-1** virtual machine, and then select **Request access**.
+1. Select the **paw-1** virtual machine, and then select **Request access**.
 
     ![On the Virtual machines screen, the first listed virtual machine name is selected and highlighted (paw-1), as is Request access button above it.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image12.png "Request access for paw-1")
 
-3. For each of the ports, select the **On** toggle button, notice how the default IP settings is **My IP**.
+2. For each of the ports, select the **On** toggle button, notice how the default IP settings is **My IP**.
 
     ![On is selected under the Toggle column for all four of the ports listed under paw-1.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image13.png "Select on for each of the ports")
 
-4. At the bottom of the dialog, select **Open ports**. After a few moments, you should now see the **APPROVED** requests have been incremented and the **Last Access** is set to **Active now.**.
+3. At the bottom of the dialog, select **Open ports**. After a few moments, you should now see the **APPROVED** requests have been incremented and the **Last Access** is set to **Active now.**.
 
     ![On the Virtual machines screen, the paw-1 virtual machine displays 1 Request as approved, and the last access column shows Active now.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image14.png "View Approved and Last Access status")
 
     > **Note**  If you did not wait for your VMs and virtual networks to be fully provisioned via the ARM template, you may get an error.
 
-5. Select the ellipses, then select **Activity Log**, you will be able to see a history of who requests access to the virtual machines.
+4. Select the ellipses, then select **Activity Log**, you will be able to see a history of who requests access to the virtual machines.
 
     ![Activity Log is highlighted in the shortcut menu for the last user.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image15.png "View the Activity Log")
 
     > **Note**: These entries will persist after you have deleted the VMs. You will need to manually remove them after VM deletion.
 
-6. In the Azure Portal main menu, select **All Services**, then type **Network**, then select **Network security groups**.
+5. In the Azure Portal main menu, select **All Services**, then type **Network**, then select **Network security groups**.
 
     ![All services is highlighted in the left menu of the Azure portal, and the Network security groups is highlighted in the filtered list to the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image16.png "Select paw-1-nsg")
 
-7. In the filter textbox, type **paw-1-nsg**, then select the **paw-1-nsg** network security group.
+6. In the filter textbox, type **paw-1-nsg**, then select the **paw-1-nsg** network security group.
 
-8. Select **Inbound security rules.** You should now see inbound security rules set up by JIT Access.
+7. Select **Inbound security rules.** You should now see inbound security rules set up by JIT Access.
 
     ![The first four listed items are highlighted under Inbound security rules.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image17.png "View the inbound security rules set up by JIT Access")
 
@@ -662,17 +668,23 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
     > **Note**: You would have downloaded the [GitHub repo](https://github.com/Microsoft/MCW-Azure-Security-Privacy-and-Compliance) and extracted this in the setup steps.  If you did not perform those steps, perform them now. You can also choose to copy the file from your desktop to the VM.
 
-8. Review the script. Notice that it does the following:
+8. Review the script. Notice that it does the following for various exercises:
 
-    - Installs NotePad++
+   - Installs Putty
 
-    - Adds hosts entries for DNS
+   - Installs NotePad++
 
-    > **Note**: When using multiple virtual networks, you must setup a DNS server in the Azure tenant.
+   - Adds hosts entries for DNS
 
-    - Executes port scans
+   > **Note**: When using multiple virtual networks, you must setup a DNS server in the Azure tenant.
 
-9. Press **F5** to run the script. You should see the following (the Azure ARM Template created a default rule to block all traffic):
+   - Executes port scans
+
+   - Executes brute force SSH attack
+
+9. Press **F5** to run the script for exercise 4. You should see the following:
+
+    > **Note**:  The ARM template deploys a Deny All rule.  If you were to simply create a Network Security Group from the UI, you would not experience this behavior.
 
     - Port scan for port 3389 (RDP) to **DB-1** and **WEB-1** is unsuccessful from the **PAW-1** machine.
 
@@ -680,7 +692,7 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
     ![The information above for port 3389 (RDP) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image55.png)
 
-    - Port scan for port 1433 (SQL) to **DB-1** and **WEB-1** is unsuccessful from the **PAW-1** machine. **DB-1** is running SQL Server but traffic is blocked at NSG and via the Windows Firewall.
+    - Port scan for port 1433 (SQL) to **DB-1** and **WEB-1** is unsuccessful from the **PAW-1** machine. **DB-1** is running SQL Server but traffic is blocked at NSG and via the Windows Firewall by default, however a script ran in the ARM template to open port 1433 on the DB-1 server.
 
     ![The information above for port 1433 (SQL) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image56.png "View the information")
 
@@ -688,7 +700,6 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
     ![The information above for port 80 (HTTP) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image57.png)
 
-> **Note**:  The ARM template deploys a Deny All rule.  If you were to simply create a Network Security Group from the UI, you would not experience this behavior.
 
 ### Task 2: Configure network security groups
 
@@ -696,51 +707,67 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
 2. Configure the database server to only allow SQL Connections from the web server:
 
-    - Select **Network Security Groups**.
+   - Select **Network Security Groups**.
 
-    - Select **DbTrafficOnly**.
+   - Select **DbTrafficOnly**.
 
-    - Select **Inbound Security Rules**.
+   - Select **Inbound Security Rules**.
 
-    - Select **+Add**.
+   - Select **+Add**.
 
-    - For the **Source**, select **IP Addresses**.
+   - For the **Source**, select **IP Addresses**.
 
-    - For the **Source IP address**, enter **10.2.0.4**.
+   - For the **Source IP address**, enter **10.2.0.4**.
   
-    - For the **Destination**, keep **Any**.
+   - For the **Destination**, keep **Any**.
 
-    - For the **Destination port range**, enter **1433**.
+   - For the **Destination port range**, enter **1433**.
 
-    - For the **Priority**, enter **100**.
+   - For the **Priority**, enter **100**.
 
-    - For the **Name**, enter **Port_1433**.
+   - For the **Name**, enter **Port_1433**.
 
-    - Select **Add**.
+   - Select **Add**.
+
+   - Select **+Add**.
+
+   - For the **Source**, select **IP Addresses**.
+
+   - For the **Source IP address**, enter **10.0.0.4**.
+  
+   - For the **Destination**, keep **Any**.
+
+   - For the **Destination port range**, enter **1433**.
+
+   - For the **Priority**, enter **102**.
+
+   - For the **Name**, enter **Port_1433_Paw**.
+
+   - Select **Add**.
 
 3. Configure the web server to allow all HTTP and HTTPS connections:
 
-    - Select **Network Security Groups**.
+   - Select **Network Security Groups**.
 
-    - Select **WebTrafficOnly**.
+   - Select **WebTrafficOnly**.
 
-    - Select **Inbound Security Rules**.
+   - Select **Inbound Security Rules**.
 
-    - Select **+Add**.
+   - Select **+Add**.
 
-    - For the **Source**, keep **Any**.
+   - For the **Source**, keep **Any**.
 
-    - For the **Destination**, keep **Any**.
+   - For the **Destination**, keep **Any**.
 
-    - For the **Destination port ranges**, enter **80,443**.
+   - For the **Destination port ranges**, enter **80,443**.
 
-    - For the **Priority**, enter **100**.
+   - For the **Priority**, enter **100**.
 
-    - Change the **Name** to **Port\_80\_443**.
+   - Change the **Name** to **Port\_80\_443**.
 
-    - Select **Add**.
+   - Select **Add**.
 
-    > **Note**: In some rare cases it may take up to 15 minutes for your Network Security Group to change its status from **Updating**.  You won't be able to add any other rules until it completes.
+   > **Note**: In some rare cases it may take up to 15 minutes for your Network Security Group to change its status from **Updating**.  You won't be able to add any other rules until it completes.
 
 4. Configure both the database and web server to only allow RDP connections from the PAW machine:
 
@@ -782,8 +809,6 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
        ![Save is highlighted at the top, and two log items are selected below.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image60.png "Save the logs")
 
-       - Repeat for all remaining Network Security Groups.
-
 ### Task 3: Test network security group rules \#2
 
 1. Switch back to the **PAW-1** virtual machine.
@@ -795,12 +820,12 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
     ![The information above for port 3389 (RDP) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image61.png "View the information")
 
     - Port scan for port 1433 (SQL) to **DB-1** is successful, and **WEB-1** is unsuccessful from the **PAW-1** machine.
-    
-    > **Note**: You may need to disable the windows firewall on the DB-1 server to achieve this result.
+
+    > **Note**: If the ARM script failed, you may need to disable the windows firewall on the DB-1 server to achieve this result.
 
     ![The information above for port 1433 (SQL) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image62.png "View the information")
 
-    - If IIS has been setup on WEB-1, the port scan for port 80 (HTTP) to **DB-1** is unsuccessful and **WEB-1** is successful from the **PAW-1** machine
+    - **Note** The ARM Template installed IIS on WEB-1, the port scan for port 80 (HTTP) to **WEB-1** is successful from the **PAW-1** machine, however to **DB-1** is unsuccessful as it is not running IIS.
 
     ![The information above for port 80 (HTTP) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image63.png "View the information")
 
@@ -822,7 +847,7 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
     ![Network Watcher Agent for Windows is highlighted on the left, and Create is highlighted on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image65.png "Create a Network Watcher agent")
 
-7. In the next **Install extension** dialog window (note that it could be blank) select **OK.** You should see a toast notification about the script extension being installed into the Virtual Machine.
+7. In the next **Install extension** dialog window (note that it could be blank) select **OK.** You should see a dialog toast notification about the script extension being installed into the Virtual Machine.
 
     ![The toast notification states: "Deployment in progress ... Deployment to resource group 'azure-securitytest1' is in progress."](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image66.png "Toast notification about the script installation")
 
@@ -856,13 +881,13 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
 11. Notice the ability to save the capture file to the local machine or an Azure storage account. Ensure that the resource group storage account is selected.  If you check your resource group, the storage account is prefixed with **"diagstor"**.
 
-    ![In the Add packet capture window, databasetraffic is entered in the Packet capture name box, and the Storage account check box is checked.](media/2020-01-12-12-24-05.png "Dialog box screenshot")
-
 12. For the values, enter the following:
 
     - Maximum bytes per packet: 0.
     - Maximum bytes per session: 1073741824.
     - Time limit: 600.
+
+    ![In the Add packet capture window, databasetraffic is entered in the Packet capture name box, and the Storage account check box is checked.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/packetcapture.png "Dialog box screenshot")
 
 13. Select **OK**.
 
@@ -870,13 +895,219 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
 1. Switch your Remote Desktop connection to the **PAW-1** virtual machine.
 
-2. Uncomment the last line of the script, and press **F5**.
+2. Uncomment the following line of the script, and press **F5**.
+
+    ```PowerShell
+    #TestPortRange $computers 80 443;
+    ```
 
    ![The PowerShell ISE window displays uncommented PowerShell script port scan command.](media/2020-01-12-12-49-13.png "Running the uncommented PowerShell script")
 
-    > **Note**: You should see the basic ports scanned, and then a port scan from 80 to 443. This will generate many security center logs for the Network Security Group which will be used in the Custom Alert in the next exercise.
+    > **Note**: You should see the basic ports scanned, and then a port scan from 80 to 443. This will generate many security center logs for the Network Security Groups which will be used in the Custom Alert in the next set of exercises. Continue to the next exercise while the script executes.
 
-## Exercise 5: Azure Sentinel Logging and Reporting
+## Exercise 5: Azure Security Center
+
+Duration: 45 minutes
+
+Synopsis: Azure Security Center provides several advanced security and threat detection abilities that are not enabled by default. In this exercise we will explore and enable several of them.
+
+### Task 1: Linux VM and Microsoft Monitoring Agent (MMA) Instal
+
+1. In the Azure Portal, browse to your **azsecurity-INIT** resource group, then select the *azseclog...* **Log Analytics Workspace**
+
+    ![The log analytics workspace is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/LogAnalyticsWorkspace.png "Select the log analytics workspace")
+
+2. In the blade, select **Agents Management**
+3. Record the `Workspace ID` and the `Primary key` values
+
+   ![Agents management blade link is highlighted along with the id and key for the workspace](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/LogAnalyticsWorkspace_Settings.png "Copy the workspace id and key")
+
+4. Switch to the Remote Desktop Connection to the **PAW-1**
+5. Open the **Putty** tool, login to the **linux-1** machine using the username and password
+
+   ![Putty window with linux-1 as the host.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/putty-linux-1.png "Use Putty to login to linux-1")
+
+6. Run the following commands, be sure to replace the workspace tokens with the values you records above:
+
+```bash
+wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <YOUR_WORKSPACE_ID> -s <YOUR_WORKSPACE_KEY>
+
+sudo /opt/microsoft/omsagent/bin/service_control restart <YOUR_WORKSPACE_ID>
+
+```
+
+7. Switch back to the Azure Portal
+8. In the blade menu, select **Advanced Settings** and then select **Linux Servers**, you should see **1 LINUX COMPUTER CONNECTED**
+
+   ![The displayed of connected linux computers for the workspace.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/loganalytics-linux-computers.png "Review the linux computers connected to workspace")
+
+   > **Note** In most cases, Azure will assign resources automatically to the log analytics workspace in your resource group.
+
+### Task 2: Execute Brute Force Attack
+
+1. Switch to the Remote Desktop Connection to the **PAW-1**
+2. In the PowerShell ISE, comment the lines for Exercise 4, then uncomment the lines for Exercise 5
+3. Run the script, notice how it will execute several attempts to login via SSH to the **linux-1** machine using the plink tool from putty
+4. After a few moments (up to 30 mins), you will see an alert from Security Center about a successful brute force attack.
+
+    ![The email warning about the Brute Force Attack.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/linux-brute-attack-warning.png "The Azure Security Center warning about brute force attack")
+
+### Task 2: Enable Change Tracking and Update Management
+
+1. Switch back to the Azure Portal
+2. In the search menu, type **Virtual Machine**, then select it
+3. Highlight the **paw-1**, **web-1**, **db-1** and **linux-1** virtual machines that were deployed
+4. In the top menu, select **Services**, then select **Change Tracking**
+
+   ![The virtual machines are selected and the change tracking menu item is selected.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/virtual-machines-svcs-changetracking.png "Enable change tracking for the virtual machines")
+
+5. Select the **CUSTOM** radio button
+6. Select **change**, select the **Log Analytics Workspace** that was deployed with the lab ARM template
+
+    ![The change tracking blade is displayed with custom and change link highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/virtual-machines-svcs-changetracking-config.png "Select CUSTOM and then select change links")
+
+7. Select the log analytics workspace for your resource group and then select the matching automation account, then select **Ok**
+
+    ![The custom configuration dialog is displayed with the log analytics workspace select along with the matching automation account.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/virtual-machines-svcs-changetracking-config2.png "Select the resource group log analytics workspace and matching automation account")
+
+8. Select all the virtual machines, then select **Enable**
+9. Navigate back to the **Virtual Machines** blade, again highlight the **paw-1**, **web-1**, **db-1** and **linux-1** virtual machines that were deployed
+10. In the top menu, select **Services**, then select **Inventory**
+11. Select the **CUSTOM** radio button
+12. Select **change**, select the **Log Analytics Workspace** that was deployed with the lab ARM template
+13. Notice that all the VMs are already enabled for the workspace based on the last task
+14. Navigate back to the **Virtual Machines** blade, again, highlight the **paw-1**, **web-1**, **db-1** and **linux-1** virtual machines that were deployed
+15. In the top menu, select **Services**, then select **Update Management**
+16. Select the **CUSTOM** radio button
+17. Select **change**, select the **Log Analytics Workspace** that was deployed with the lab ARM template
+18. Select all the virtual machines, then select **Enable**
+19. Browse to your resource group, then select your Log Analytics workspace
+20. Under the **General** section, select the **Solutions** blade, you should see the **ChangeTracking** and **Updates** solutions were added to your workspace. Select the **ChangeTracking** solution.
+
+    ![The solutions configured for the workspace are displayed.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/loganalytics-solutions.png "Select the ChangeTracking solution item")
+
+21. Under **Workspace Data Sources** section, select **Solution Targeting (Preview)**
+22. Remove any scopes that are displayed via the ellipses to the right of the items
+23. Repeat the steps to remove the solution targeting for the **Updates** solution.
+
+### Task 2: Review MMA Configuration
+
+1. Switch to the Remote Desktop Connection to the **PAW-1**
+2. Open **Event Viewer**
+3. Expand the **Applications and Services Logs**, then select **Operations Manager**
+4. Right-click **Operations Manager**, select **Filter Logs**
+
+    ![The event viewer is displayed with the click path highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/eventviewer-operations-mgr.png "Filter the Operations Manager event logs")
+
+5. For the event id, type **5001**, select the latest entry, you should see similar names to all the solutions that are deployed in your Log Analytics workspace including the ones you just added:
+
+    ![The event viewer is displayed with the click path highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/eventviewer-operations-mgr-5000.png "Filter the Operations Manager event logs")
+
+6. Open **Windows Explorer**, browse to **C:\Program Files\Microsoft Monitoring Agent\Agent\Health Service State\Management Packs** folder
+7. Notice the management packs that have been downloaded that correspond to the features you deployed from Azure Portal:
+
+    ![The management packs for the solutions are displayed.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/loganalytics-mgmtpacks.png "Notice the solution management packs were downloaded")
+
+### Task 2: Adaptive Application Controls
+
+1. Switch to the Azure Portal
+2. Select **Azure Security Center**
+3. In the blade menu, scroll to the **ADVANCED CLOUD DEFENSE** section and select **Adaptive application controls**
+4. You will likely have several groups displayed, find the one that has your newly created lab VMs
+
+   ![Machine groupings is displayed.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/securitycenter-grouping.png "Azure automatically created a group for your VMs")
+
+5. Expand the **Publisher whitelising rules** section, you should see that Google Chrome and Notepad++ were picked up and have Microsoft Certificated tied to them
+
+   ![The discovered applications are displayed.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/securitycenter-whitelistingrules.png "Notice the applications that were executed on the machine are displayed")
+
+6. In the top menu, select **Group settings**
+7. Review the available settings
+
+> **NOTE** As of June 2020, the **Enforce** option is temporarily disabled.
+
+### Task 3: File Integrity Monitoring
+
+1. Switch to the Azure Portal
+2. Select Azure Security Center
+3. In the blade menu, scroll to the **ADVANCED CLOUD DEFENSE** section and select **File Integrity Monitoring**
+4. For the log workspace tied to your lab environment virtual machines, if displayed, select **Upgrade Plan**, then select **Try File Integrity Monitoring**
+5. Select the workspace only, then select **Upgrade**
+6. Select the **Continue without installing agents** link
+
+   ![The continue without installing agents link is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-enable.png "Select the continue without installing agents link")
+
+7. If displayed, select **Enable**, otherwise simply select the workspace
+8. In the menu, select **Settings**
+
+    ![The Settings link is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-settings.png "Select the settings link")
+
+9. Select the **Windows Files** tab
+10. Select **+Add**
+11. For the item name, type **HOSTS**
+12. For the path, type **c:\windows\system32\drivers\etc\\\***
+13. Select **Save**
+
+    ![The settings page is displayed with the links highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-addentry.png "Add a new file integrity monitoring item")
+
+14. Select the **File Content** tab
+15. Select **Link**, then select the storage account tied to your lab
+
+    > **NOTE** It will take 30-60 minutes for Log Analytics and its management packs to execute on all your VMs. As you may not have that much time with this lab, screen shots are provided as to what results you will eventually get.
+
+    ![The file content page is displayed with the links highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-filecontent.png "Link a storage account for file changes")
+
+16. Switch to the Remote Desktop Connection to the **PAW-1**
+17. Open the **c:\windows\system32\drivers\etc\hosts** file
+18. Add the following entry:
+
+    ```cmd
+    10.0.0.6    linux-1
+    ```
+
+19. Save the file
+20. After about 30-60 minutes, the Log Analytics workspace will start to pickup changes to your files, registry settings and windows services:
+
+    ![The file changes are saved to the logs of the workspace.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-logchanges.png "Review the file change logs for the paw-1 machine in the log analytics workspace")
+
+21. You will also start to see the file snapshots show up in the storage account:
+
+    ![The file changes are displayed in the storage account.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-snapshots.png "The file changes are displayed in the storage account")
+
+### Task 4: Disk Encryption
+
+1. Switch to the Azure Portal
+2. Browse to your resource group
+3. Browse to your key vault
+4. In the blade menu under **Settings**, select **Access Policies**
+5. Select the **Azure Disk Encryption for volume encryption** checkbox
+
+   ![The click path above is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-snapshots.png "Enable the key vault for disk encryption activities")
+
+6. Select **Save**
+7. Browse to your resource group
+8. Select the **linux-1** virtual machine
+9. In the blade menu, select **Disks**
+10. In the top menu, select **Encryption**
+
+    ![The click path above is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-snapshots.png "Browse to configure disk encryption for the linux-1 os disk")
+
+11. For **Disks to encrypt**, select **OS Disk**
+12. Select the **Select a key vault and key for encryption** link
+13. Select the lab key vault
+14. For the key, select **Create new**
+15. For the name, type **vm-disk-key**
+16. Select **Create**
+
+    ![Select the lab key vault.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/diskencryption-selectkeyvault.png "Select the lab key vault")
+
+17. For the **Version**, select the new version
+18. Select **Select**
+19. Select **Save**, then select **Yes** when prompted
+
+> **NOTE** Disk encryption can take some time, move on to the next exercises.
+
+## Exercise 6: Azure Sentinel Logging and Reporting
 
 Duration: 20 minutes
 
@@ -896,19 +1127,19 @@ Synopsis: In this exercise, you will setup Azure Sentinel to point to a logging 
 
 4. In the blade, under **Threat Management**, select **Workbooks**.
 
-5. In the list of workbooks, select **Azure Network Watcher**, choose **Save**.
+5. In the list of workbooks, select **Azure AD Audit logs**, select **Save**.
 
-6. Select the region and choose **OK**.
-
-7. In the list of workbooks, select **Azure AD Audit logs**, select **Save**.
-
-8. Select the region and select **OK**.
+6. Select the region and select **OK**.
 
     ![In the left menu beneath Threat Management the Workbooks item is selected and the Azure AD Audit Logs item is selected beneath the Templates tab on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image95.png "Adding a workbook")
 
+7. In the list of workbooks, select **Azure Network Watcher**, choose **Save**.
+
+8. Select the region and choose **OK**.
+
 9. Select **View saved workbook**, take a moment to review your new workbook.
 
-    > **Note**: You may not have data in the log analytics workspace.  Wait for 10-15 minutes.
+    > **Note**: You may not have data in the log analytics workspace for the targeted workbook queries.
 
 ### Task 2: Create an Analytics alert
 
@@ -953,7 +1184,7 @@ Synopsis: In this exercise, you will setup Azure Sentinel to point to a logging 
 
     ![A chart is displayed showing the current log data and the alert threshold. The red and blue line intersect in the chart.](media/2020-01-12-13-26-17.png "Results Preview")
 
-9. Select **Next: Incident settings**, notice you have no playbooks to select yet.
+9. Select **Next: Incident settings**, review the potential incident settings.
 
 10. Select **Next: Automated response**, notice you have no playbooks to select yet.
 
@@ -977,7 +1208,7 @@ Synopsis: In this exercise, you will setup Azure Sentinel to point to a logging 
 
     > **Note**: It may take 15-20 minutes for the alert to fire. You can continue to execute the port scan script to cause log events or you can lower the threshold for the custom alert.
 
-4. In the dialog, choose **Investigate**.
+4. In the dialog, choose **Investigate**. Note that it may take a few minutes for the button to be available.
 
     ![The incident dialog is displayed with the Investigate button selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image76.png "Investigate an incident")
 
@@ -1003,11 +1234,11 @@ Synopsis: In this exercise, you will setup Azure Sentinel to point to a logging 
 
    ![The information above is entered in the Create logic app blade.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image80.png "Enter Create logic app information")
 
-4. Select **Create**, after a few moments, the **Logic Apps Designer** will load. If the designer does not load, wait a few minutes and refresh the Playbook list. Select the **Email** playbook.
+4. Select **Review + Create** then select **Create**.  After a few moments, the **Logic Apps Designer** will load. If the designer does not load, wait a few minutes and refresh the Playbook list. Select the **Email** playbook.
 
     ![The playbooks list is displayed and the Email playbook is highlighted.](media/2020-01-12-14-40-13.png "Playbook List")
 
-5. Select the **Get a notification email  when Security Center detects a threat** template.
+5. Select the **Get a notification email when Security Center detects a threat** template.
 
     ![The Logic Apps Designer screen is displayed with a list of templates. The Get a notification email when Security Center detects a threat template is selected.](media/2020-01-12-14-44-52.png "Select Use this template")
 
@@ -1039,26 +1270,26 @@ Synopsis: In this exercise, you will setup Azure Sentinel to point to a logging 
 
 1. In the **Azure Sentinel** blade, select **Notebooks**.
 
-2. In the blade top menu navigation, select **Clone Notebooks**.
+2. Search for the **Getting Started with Azure Sentinel Notebooks** item
 
-3. If not already logged in, select your Azure credentials, the GitHub repo will start to clone into your workspace.
+3. In the right dialog, select **Launch Notebook**.
 
-    ![Azure Sentinel Notebooks blade shows Clone Notebooks is highlighted.](media/2020-01-12-18-02-39.png "Close Azure Sentinel Notebooks")
-
-    You will see the GitHub progress meter.
+4. If not already logged in, select your Azure credentials, the GitHub repo will start to clone into your workspace. You will see the GitHub progress meter.
 
     ![The GitHub progress meter is displayed.](media/2020-01-12-18-06-26.png "GitHub Progress Meter")
 
-4. Navigate to **My Projects** and select the **Run on Free Compute**.
+5. The notebook should open in the Jupyter notebooks application. It will also start a container kernel for executing the notebook cells.
 
-5. Review the various notebooks that are available to you. You can choose to execute some of them, if you do, note that they are continually evolving and being modified so your results may vary.
+6. Follow the directions of the notebook while executing each cell. The notebook will required you to setup some supported API accounts to merge external security data such as known bad actors and other geographical information.
+
+    ![The getting started Sentinel notebook is displayed.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/jupyter-sentinel.png "Run the notebook steps")
 
 ### Task 6: Creating Reports with Power BI
 
 1. Navigate back to your **Azure Sentinel** browser window.  Select **Logs**.
 
     >**Note**: You may see a **Welcome to Log Analytics** splash page in the blade.  Select **Get Started**.
-    
+
     ![The screenshot displays the Welcome to Log Analytics blade.](media/2020-01-12-19-14-49.png "Welcome to Log Analytics")
 
 2. In the **Schema** tab under **Active**, expand the **LogManagement** node, notice the various options available.
@@ -1079,7 +1310,7 @@ Synopsis: In this exercise, you will setup Azure Sentinel to point to a logging 
 
 7. Close **Power BI**.
 
-## Exercise 6: Using Compliance Tools (Azure Policy, Secure Score and Compliance Manager)
+## Exercise 7: Using Compliance Tools (Azure Policy, Secure Score and Compliance Manager)
 
 Duration: 15 minutes
 
