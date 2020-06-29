@@ -929,12 +929,12 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
 6. Run the following commands, be sure to replace the workspace tokens with the values you records above:
 
-```bash
-wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <YOUR_WORKSPACE_ID> -s <YOUR_WORKSPACE_KEY>
+    ```bash
+    wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <YOUR_WORKSPACE_ID> -s <YOUR_WORKSPACE_KEY>
 
-sudo /opt/microsoft/omsagent/bin/service_control restart <YOUR_WORKSPACE_ID>
+    sudo /opt/microsoft/omsagent/bin/service_control restart <YOUR_WORKSPACE_ID>
 
-```
+    ```
 
 7. Switch back to the Azure Portal
 8. In the blade menu, select **Advanced Settings** and then select **Linux Servers**, you should see **1 LINUX COMPUTER CONNECTED**
