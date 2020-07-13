@@ -81,7 +81,7 @@ Synopsis: In this exercise, you will set up your environment for use in the rest
 
 6. Toggle the **Auto Provisioning** to **Off**
 
-> **NOTE** If you are doing this in a production environment, you may want to keep this setting to **On** and manually configure the VMs that are created.
+> **NOTE** Auto-provisioning is turned off for purposes of this lab, it is highly recommended that auto-provisioning is set to "on" in a production environment to ensure they security controls are applied.
 
 ### Task 2: Deploy resources to Azure
 
@@ -144,6 +144,8 @@ Synopsis: In this exercise, you will set up your environment for use in the rest
             - Port 1433 is opened on the database server using a PowerShell script.
   
             - paw-1 is used as a development machine for the labs to save on resources.  A Paw workstation would not be used as a development machine in production with Visual Studio and SQL Management Studio.  This was done to save on resource costs and setup complexity.
+
+            > NOTE: Please reference [Understand secure, Azure-managed workstations](https://docs.microsoft.com/en-us/azure/active-directory/devices/concept-azure-managed-workstation) and [Privileged Access Workstations](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/privileged-access-workstations) for best practices with PAW machines.
 
        - SQL Azure Server with sample database.
 
