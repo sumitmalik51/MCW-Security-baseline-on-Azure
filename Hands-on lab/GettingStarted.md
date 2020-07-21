@@ -19,7 +19,7 @@
    
 1. When you click on Azure portal, edge browser welcome screen will come up, select **Get started**.
 
-   ![](media/edge-get-started-window.png "Get started")
+   ![](media/task8.png "Get started")
    
 1. On next window, click on **Confirm**.
 
