@@ -53,20 +53,20 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 5: Setup network packet capture](#task-5-setup-network-packet-capture)
     - [Task 6: Execute a port scan](#task-6-execute-a-port-scan)
   - [Exercise 5: Azure Security Center](#exercise-5-azure-security-center)
-    - [Task 1: Linux VM and Microsoft Monitoring Agent (MMA) Instal](#task-1-linux-vm-and-microsoft-monitoring-agent-mma-instal)
-    - [Task 2: Execute Brute Force Attack](#task-2-execute-brute-force-attack)
-    - [Task 2: Enable Change Tracking and Update Management](#task-2-enable-change-tracking-and-update-management)
-    - [Task 2: Review MMA Configuration](#task-2-review-mma-configuration)
-    - [Task 2: Adaptive Application Controls](#task-2-adaptive-application-controls)
-    - [Task 3: File Integrity Monitoring](#task-3-file-integrity-monitoring)
-    - [Task 4: Disk Encryption](#task-4-disk-encryption)
-  - [Exercise 6: Azure Sentinel Logging and Reporting](#exercise-6-azure-sentinel-logging-and-reporting)
+    - [Task 1: Linux VM and Microsoft Monitoring Agent (MMA) install](#task-1-linux-vm-and-microsoft-monitoring-agent-mma-install)
+    - [Task 2: Execute brute force attack](#task-2-execute-brute-force-attack)
+    - [Task 3: Enable change tracking and update management](#task-3-enable-change-tracking-and-update-management)
+    - [Task 4: Review MMA configuration](#task-4-review-mma-configuration)
+    - [Task 5: Adaptive Application Controls](#task-5-adaptive-application-controls)
+    - [Task 6: File Integrity Monitoring](#task-6-file-integrity-monitoring)
+    - [Task 7: Disk encryption](#task-7-disk-encryption)
+  - [Exercise 6: Azure Sentinel logging and reporting](#exercise-6-azure-sentinel-logging-and-reporting)
     - [Task 1: Create a dashboard](#task-1-create-a-dashboard)
     - [Task 2: Create an Analytics alert](#task-2-create-an-analytics-alert)
     - [Task 3: Investigate a custom alert incident](#task-3-investigate-a-custom-alert-incident)
     - [Task 4: Create and run a playbook](#task-4-create-and-run-a-playbook)
     - [Task 5: Execute Jupyter Notebooks](#task-5-execute-jupyter-notebooks)
-    - [Task 6: Creating Reports with Power BI](#task-6-creating-reports-with-power-bi)
+    - [Task 6: Creating reports with Power BI](#task-6-creating-reports-with-power-bi)
   - [Exercise 7: Using Compliance Tools (Azure Policy, Secure Score and Compliance Manager)](#exercise-7-using-compliance-tools-azure-policy-secure-score-and-compliance-manager)
     - [Task 1: Review a basic Azure Policy](#task-1-review-a-basic-azure-policy)
     - [Task 2: Review and create Azure Blueprints](#task-2-review-and-create-azure-blueprints)
@@ -220,7 +220,7 @@ Synopsis: In this exercise, attendees will utilize Azure SQL features to data ma
 
     ![The information above is entered in the Connect to Server dialog box, and Connect is highlighted at the bottom.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image22.png "Sign in to the SQL Server Database Engine")
 
-9. Depending on how you connected to the Azure SQL environment (inside or outside your vnet), you may be prompted to add a firewall rule. If this occurs, perform the following actions:
+9. Depending on how you connected to the Azure SQL environment (inside or outside your VNet), you may be prompted to add a firewall rule. If this occurs, perform the following actions:
 
     - Select **Connect**, in the **New Firewall Rule** dialog, select **Sign In**.
 
@@ -648,7 +648,7 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
     > **Note**: Default username is **wsadmin** with **p\@ssword1rocks** as password and you may need to request JIT Access if you have taken a break between exercises.
 
-4. In the **PAW-1** virtual machine, open **Windows PowerShell ISE** as **administrator**.
+4. In the **paw-1** virtual machine, open **Windows PowerShell ISE** as **administrator**.
 
     - Select the **Windows** icon.
 
@@ -686,17 +686,17 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
     > **Note**:  The ARM template deploys a Deny All rule.  If you were to simply create a Network Security Group from the UI, you would not experience this behavior.
 
-    - Port scan for port 3389 (RDP) to **DB-1** and **WEB-1** is unsuccessful from the **PAW-1** machine.
+    - Port scan for port 3389 (RDP) to **db-1** and **web-1** is unsuccessful from the **paw-1** machine.
 
     - The information above for port 3389 (RDP) is visible after running the script and pressing **F5**.
 
     ![The information above for port 3389 (RDP) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image55.png)
 
-    - Port scan for port 1433 (SQL) to **DB-1** and **WEB-1** is unsuccessful from the **PAW-1** machine. **DB-1** is running SQL Server but traffic is blocked at NSG and via the Windows Firewall by default, however a script ran in the ARM template to open port 1433 on the DB-1 server.
+    - Port scan for port 1433 (SQL) to **db-1** and **web-1** is unsuccessful from the **paw-1** machine. **db-1** is running SQL Server but traffic is blocked at NSG and via the Windows Firewall by default, however a script ran in the ARM template to open port 1433 on the db-1 server.
 
     ![The information above for port 1433 (SQL) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image56.png "View the information")
 
-    - Port scan for port 80 (HTTP) to **DB-1** and **WEB-1** is unsuccessful from the **PAW-1** machine, if traffic was allowed, it would always fail to **DB-1** because it is not running IIS or any other web server.
+    - Port scan for port 80 (HTTP) to **db-1** and **web-1** is unsuccessful from the **paw-1** machine, if traffic was allowed, it would always fail to **db-1** because it is not running IIS or any other web server.
 
     ![The information above for port 80 (HTTP) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image57.png)
 
@@ -811,21 +811,21 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
 ### Task 3: Test network security group rules \#2
 
-1. Switch back to the **PAW-1** virtual machine.
+1. Switch back to the **paw-1** virtual machine.
 
 2. Press **F5** to run the **PortScan** script. You should see the following:
 
-    - Port scan for port 3389 (RDP) to **DB-1** and **WEB-1** is successful from the **PAW-1** machine.
+    - Port scan for port 3389 (RDP) to **db-1** and **web-1** is successful from the **paw-1** machine.
 
     ![The information above for port 3389 (RDP) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image61.png "View the information")
 
-    - Port scan for port 1433 (SQL) to **DB-1** is successful, and **WEB-1** is unsuccessful from the **PAW-1** machine.
+    - Port scan for port 1433 (SQL) to **db-1** is successful, and **web-1** is unsuccessful from the **paw-1** machine.
 
-    > **Note**: If the ARM script failed, you may need to disable the windows firewall on the DB-1 server to achieve this result.
+    > **Note**: If the ARM script failed, you may need to disable the windows firewall on the db-1 server to achieve this result.
 
     ![The information above for port 1433 (SQL) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image62.png "View the information")
 
-    - **Note** The ARM Template installed IIS on WEB-1, the port scan for port 80 (HTTP) to **WEB-1** is successful from the **PAW-1** machine, however to **DB-1** is unsuccessful as it is not running IIS.
+    - **Note** The ARM Template installed IIS on web-1, the port scan for port 80 (HTTP) to **web-1** is successful from the **paw-1** machine, however to **db-1** is unsuccessful as it is not running IIS.
 
     ![The information above for port 80 (HTTP) is visible after running the script and pressing F5.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image63.png "View the information")
 
@@ -893,7 +893,7 @@ Synopsis: In this exercise, attendees will utilize Network Security Groups to en
 
 ### Task 6: Execute a port scan
 
-1. Switch your Remote Desktop connection to the **PAW-1** virtual machine.
+1. Switch your Remote Desktop connection to the **paw-1** virtual machine.
 
 2. Uncomment the following line of the script, and press **F5**.
 
@@ -911,7 +911,7 @@ Duration: 45 minutes
 
 Synopsis: Azure Security Center provides several advanced security and threat detection abilities that are not enabled by default. In this exercise we will explore and enable several of them.
 
-### Task 1: Linux VM and Microsoft Monitoring Agent (MMA) Instal
+### Task 1: Linux VM and Microsoft Monitoring Agent (MMA) install
 
 1. In the Azure Portal, browse to your **azsecurity-INIT** resource group, then select the *azseclog...* **Log Analytics Workspace**.
 
@@ -922,7 +922,7 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
    ![Agents management blade link is highlighted along with the id and key for the workspace](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/LogAnalyticsWorkspace_Settings.png "Copy the workspace id and key")
 
-4. Switch to the Remote Desktop Connection to the **PAW-1**.
+4. Switch to the Remote Desktop Connection to the **paw-1**.
 5. Open the **Putty** tool, login to the **linux-1** machine using the username and password.
 
    ![Putty window with linux-1 as the host.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/putty-linux-1.png "Use Putty to login to linux-1")
@@ -943,16 +943,16 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
    > **Note** In most cases, Azure will assign resources automatically to the log analytics workspace in your resource group.
 
-### Task 2: Execute Brute Force Attack
+### Task 2: Execute brute force attack
 
-1. Switch to the Remote Desktop Connection to the **PAW-1**.
+1. Switch to the Remote Desktop Connection to the **paw-1**.
 2. In the PowerShell ISE, comment the lines for Exercise 4, then uncomment the lines for Exercise 5.
 3. Run the script, notice how it will execute several attempts to login via SSH to the **linux-1** machine using the plink tool from putty.
 4. After a few moments (up to 30 mins), you will see an alert from Security Center about a successful brute force attack.
 
     ![The email warning about the Brute Force Attack.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/linux-brute-attack-warning.png "The Azure Security Center warning about brute force attack")
 
-### Task 2: Enable Change Tracking and Update Management
+### Task 3: Enable change tracking and update management
 
 1. Switch back to the Azure Portal.
 2. In the search menu, type **Virtual Machine**, then select it.
@@ -990,9 +990,9 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 22. Remove any scopes that are displayed via the ellipses to the right of the items.
 23. Repeat the steps to remove the solution targeting for the **Updates** solution.
 
-### Task 2: Review MMA Configuration
+### Task 4: Review MMA configuration
 
-1. Switch to the Remote Desktop Connection to the **PAW-1**.
+1. Switch to the Remote Desktop Connection to the **paw-1**.
 2. Open **Event Viewer**.
 3. Expand the **Applications and Services Logs**, then select **Operations Manager**.
 4. Right-click **Operations Manager**, select **Filter Logs**.
@@ -1008,7 +1008,7 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
     ![The management packs for the solutions are displayed.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/loganalytics-mgmtpacks.png "Notice the solution management packs were downloaded")
 
-### Task 2: Adaptive Application Controls
+### Task 5: Adaptive Application Controls
 
 1. Switch to the Azure Portal.
 2. Select **Azure Security Center**.
@@ -1026,7 +1026,7 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
 > **NOTE** As of June 2020, the **Enforce** option is temporarily disabled.
 
-### Task 3: File Integrity Monitoring
+### Task 6: File Integrity Monitoring
 
 1. Switch to the Azure Portal.
 2. Select Azure Security Center.
@@ -1057,7 +1057,7 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
     ![The file content page is displayed with the links highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-filecontent.png "Link a storage account for file changes")
 
-16. Switch to the Remote Desktop Connection to the **PAW-1**.
+16. Switch to the Remote Desktop Connection to the **paw-1**.
 17. Open the **c:\windows\system32\drivers\etc\hosts** file.
 18. Add the following entry:
 
@@ -1074,7 +1074,7 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
     ![The file changes are displayed in the storage account.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-snapshots.png "The file changes are displayed in the storage account")
 
-### Task 4: Disk Encryption
+### Task 7: Disk encryption
 
 1. Switch to the Azure Portal.
 2. Browse to your resource group.
@@ -1107,7 +1107,7 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
 > **NOTE** Disk encryption can take some time, move on to the next exercises.
 
-## Exercise 6: Azure Sentinel Logging and Reporting
+## Exercise 6: Azure Sentinel logging and reporting
 
 Duration: 20 minutes
 
@@ -1284,7 +1284,7 @@ Synopsis: In this exercise, you will setup Azure Sentinel to point to a logging 
 
     ![The getting started Sentinel notebook is displayed.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/jupyter-sentinel.png "Run the notebook steps")
 
-### Task 6: Creating Reports with Power BI
+### Task 6: Creating reports with Power BI
 
 1. Navigate back to your **Azure Sentinel** browser window.  Select **Logs**.
 
@@ -1334,7 +1334,7 @@ Synopsis: In this exercise, attendees will learn to navigate the Azure Policy an
 
     ![The non-compliant resources tab is highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image106.png "Select the Non-Compliant resources tab")
 
-6. In the filter search box, type **PAW-1** and select it when displayed.
+6. In the filter search box, type **paw-1** and select it when displayed.
 
     > **Note**: You may not see resources display right away.  If this is the case, then scroll through some other non-compliant resources.
 
@@ -1342,7 +1342,7 @@ Synopsis: In this exercise, attendees will learn to navigate the Azure Policy an
 
     >**Note**: New policies are being created and your number may be different from the image below.
 
-    ![The Resource compliance blade for PAW-1 is displayed with the non-compliant items highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image107.png "Review the non-compliant items")
+    ![The Resource compliance blade for paw-1 is displayed with the non-compliant items highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image107.png "Review the non-compliant items")
 
 8. Choose one of the policies.  Review the Definition JSON of the policy definition, notice how it is based on ARM Template format and is looking for specific properties to be set of the non-compliant resources.
 
