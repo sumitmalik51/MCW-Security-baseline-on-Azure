@@ -57,31 +57,31 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 Duration: 30 minutes
 
-Synopsis: In this exercise, you will set up your environment for use in the rest of the hands-on lab. You should follow all the steps provided in the Before the Hands-on Lab section to prepare your environment *before* attending the workshop.
+In this exercise, you will set up your environment for use in the rest of the hands-on lab. You should follow all the steps provided in the Before the hands-on lab section to prepare your environment *before* attending the workshop.
 
 ### Task 1: Configure Azure Security Center
 
 1. Open the [Azure Portal](https://portal.azure.com).
 
-2. In the search box, type **Security Center**, then select it
+2. In the search box, type **Security Center**, then select it.
 
-    ![Security Center is typed into the search box with the security center menu item highlighted](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/bhol_securitycenter.png "Open Security Center")
+    ![Security Center is typed into the search box with the security center menu item highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/bhol_securitycenter.png "Open Security Center")
 
-3. In the blade menu, select **Pricing & Settings**, then select the subscription you are running the labs in
+3. In the blade menu, select **Pricing & Settings**, then select the subscription you are running the labs in.
 
-    ![In the blade select Pricing & Settings](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/bhol_securitycenter_pricesettings.png "Select Pricing and Settings")
+    ![In the blade select Pricing & Settings.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/bhol_securitycenter_pricesettings.png "Select Pricing and Settings")
 
-4. If not already set, update the pricing tier to be **Standard**, then select **Save**
+4. If not already set, update the pricing tier to be **Standard**, then select **Save**.
 
-    ![Standard pricing tier is selected](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/bhol_securitycenter_standardtier.png "Select the standard tier")
+    ![Standard pricing tier is selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/bhol_securitycenter_standardtier.png "Select the standard tier")
 
-5. In the blade menu, select **Data Collection**
+5. In the blade menu, select **Data Collection**.
 
-    ![Auto provisioning is toggled off](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/bhol_securitycenter_datacollection.png "Set Auto Provisioning to Off")
+    ![Auto provisioning is toggled off.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/bhol_securitycenter_datacollection.png "Set Auto Provisioning to Off")
 
-6. Toggle the **Auto Provisioning** to **Off**
+6. Toggle the **Auto Provisioning** to **Off**.
 
-> **NOTE** Auto-provisioning is turned off for purposes of this lab, it is highly recommended that auto-provisioning is set to "on" in a production environment to ensure they security controls are applied.
+> **Note**: Auto-provisioning is turned off for purposes of this lab, it is highly recommended that auto-provisioning is set to "on" in a production environment to ensure they security controls are applied.
 
 ### Task 2: Deploy resources to Azure
 
@@ -95,9 +95,9 @@ Synopsis: In this exercise, you will set up your environment for use in the rest
 
 5. Select **Refresh** to see your new resource group displayed and select it. It may take a few minutes.
 
-6. Select **Create a resource**, search for **template**, select **Template deployment (deploy using custom template)**, then select **Create**
+6. Select **Create a resource**, search for **template**, select **Template deployment (deploy using custom template)**, then select **Create**.
 
-7. Select **Build your own template in the editor**
+7. Select **Build your own template in the editor**.
 
 8. Copy the contents of the [ARM template](https://raw.githubusercontent.com/microsoft/MCW-Security-baseline-on-Azure/master/Hands-on%20lab/Scripts/template.json) from the repo and then paste the ARM template into the window.
 
@@ -133,7 +133,7 @@ Synopsis: In this exercise, you will set up your environment for use in the rest
 
        - Storage account
 
-       - Three virtual networks (dbVNet, webVnet, mainVnet).
+       - Three virtual networks (dbVNet, webVNet, mainVNet).
 
        - Three network security groups.
 
@@ -143,15 +143,15 @@ Synopsis: In this exercise, you will set up your environment for use in the rest
 
             - Port 1433 is opened on the database server using a PowerShell script.
   
-            - paw-1 is used as a development machine for the labs to save on resources.  A Paw workstation would not be used as a development machine in production with Visual Studio and SQL Management Studio.  This was done to save on resource costs and setup complexity.
+            - Paw-1 is used as a development machine for the labs to save on resources.  A Paw workstation would not be used as a development machine in production with Visual Studio and SQL Management Studio.  This was done to save on resource costs and setup complexity.
 
-            > NOTE: Please reference [Understand secure, Azure-managed workstations](https://docs.microsoft.com/en-us/azure/active-directory/devices/concept-azure-managed-workstation) and [Privileged Access Workstations](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/privileged-access-workstations) for best practices with PAW machines.
+            > **Note**: Please reference [Understand secure, Azure-managed workstations](https://docs.microsoft.com/en-us/azure/active-directory/devices/concept-azure-managed-workstation) and [Privileged Access Workstations](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/privileged-access-workstations) for best practices with PAW machines.
 
        - SQL Azure Server with sample database.
 
        - Azure Key Vault
 
-       - Log Analytics Workspace with joined Azure Automation account
+       - Log Analytics Workspace with joined Azure Automation account.
 
     ![Created items list. This screenshot is a list of the items that were created, including the items listed above. ](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image8.png)
 
@@ -181,4 +181,4 @@ Synopsis: In this exercise, you will set up your environment for use in the rest
 
     ![A set of extracted folders and files are visible in File Explorer: Hands-on lab, Whiteboard design session, HTMLLINKS.md, LICENSE, and README.md.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image4.png "Extract the zip file")
 
-**Note**: You should follow all steps provided *before* attending the hands-on lab.
+You should follow all steps provided *before* attending the hands-on lab.
