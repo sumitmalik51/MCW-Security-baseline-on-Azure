@@ -913,17 +913,17 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
 ### Task 1: Linux VM and Microsoft Monitoring Agent (MMA) Instal
 
-1. In the Azure Portal, browse to your **azsecurity-INIT** resource group, then select the *azseclog...* **Log Analytics Workspace**
+1. In the Azure Portal, browse to your **azsecurity-INIT** resource group, then select the *azseclog...* **Log Analytics Workspace**.
 
     ![The log analytics workspace is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/LogAnalyticsWorkspace.png "Select the log analytics workspace")
 
-2. In the blade, select **Agents Management**
-3. Record the `Workspace ID` and the `Primary key` values
+2. In the blade, select **Agents Management**.
+3. Record the `Workspace ID` and the `Primary key` values.
 
    ![Agents management blade link is highlighted along with the id and key for the workspace](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/LogAnalyticsWorkspace_Settings.png "Copy the workspace id and key")
 
-4. Switch to the Remote Desktop Connection to the **PAW-1**
-5. Open the **Putty** tool, login to the **linux-1** machine using the username and password
+4. Switch to the Remote Desktop Connection to the **PAW-1**.
+5. Open the **Putty** tool, login to the **linux-1** machine using the username and password.
 
    ![Putty window with linux-1 as the host.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/putty-linux-1.png "Use Putty to login to linux-1")
 
@@ -936,8 +936,8 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
     ```
 
-7. Switch back to the Azure Portal
-8. In the blade menu, select **Advanced Settings** and then select **Linux Servers**, you should see **1 LINUX COMPUTER CONNECTED**
+7. Switch back to the Azure Portal.
+8. In the blade menu, select **Advanced Settings** and then select **Linux Servers**, you should see **1 LINUX COMPUTER CONNECTED**.
 
    ![The displayed of connected linux computers for the workspace.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/loganalytics-linux-computers.png "Review the linux computers connected to workspace")
 
@@ -945,57 +945,57 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
 ### Task 2: Execute Brute Force Attack
 
-1. Switch to the Remote Desktop Connection to the **PAW-1**
-2. In the PowerShell ISE, comment the lines for Exercise 4, then uncomment the lines for Exercise 5
-3. Run the script, notice how it will execute several attempts to login via SSH to the **linux-1** machine using the plink tool from putty
+1. Switch to the Remote Desktop Connection to the **PAW-1**.
+2. In the PowerShell ISE, comment the lines for Exercise 4, then uncomment the lines for Exercise 5.
+3. Run the script, notice how it will execute several attempts to login via SSH to the **linux-1** machine using the plink tool from putty.
 4. After a few moments (up to 30 mins), you will see an alert from Security Center about a successful brute force attack.
 
     ![The email warning about the Brute Force Attack.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/linux-brute-attack-warning.png "The Azure Security Center warning about brute force attack")
 
 ### Task 2: Enable Change Tracking and Update Management
 
-1. Switch back to the Azure Portal
-2. In the search menu, type **Virtual Machine**, then select it
-3. Highlight the **paw-1**, **web-1**, **db-1** and **linux-1** virtual machines that were deployed
-4. In the top menu, select **Services**, then select **Change Tracking**
+1. Switch back to the Azure Portal.
+2. In the search menu, type **Virtual Machine**, then select it.
+3. Highlight the **paw-1**, **web-1**, **db-1** and **linux-1** virtual machines that were deployed.
+4. In the top menu, select **Services**, then select **Change Tracking**.
 
    ![The virtual machines are selected and the change tracking menu item is selected.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/virtual-machines-svcs-changetracking.png "Enable change tracking for the virtual machines")
 
-5. Select the **CUSTOM** radio button
-6. Select **change**, select the **Log Analytics Workspace** that was deployed with the lab ARM template
+5. Select the **CUSTOM** radio button.
+6. Select **change**, select the **Log Analytics Workspace** that was deployed with the lab ARM template.
 
     ![The change tracking blade is displayed with custom and change link highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/virtual-machines-svcs-changetracking-config.png "Select CUSTOM and then select change links")
 
-7. Select the log analytics workspace for your resource group and then select the matching automation account, then select **Ok**
+7. Select the log analytics workspace for your resource group and then select the matching automation account, then select **Ok**.
 
     ![The custom configuration dialog is displayed with the log analytics workspace select along with the matching automation account.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/virtual-machines-svcs-changetracking-config2.png "Select the resource group log analytics workspace and matching automation account")
 
-8. Select all the virtual machines, then select **Enable**
-9. Navigate back to the **Virtual Machines** blade, again highlight the **paw-1**, **web-1**, **db-1** and **linux-1** virtual machines that were deployed
-10. In the top menu, select **Services**, then select **Inventory**
-11. Select the **CUSTOM** radio button
-12. Select **change**, select the **Log Analytics Workspace** that was deployed with the lab ARM template
-13. Notice that all the VMs are already enabled for the workspace based on the last task
-14. Navigate back to the **Virtual Machines** blade, again, highlight the **paw-1**, **web-1**, **db-1** and **linux-1** virtual machines that were deployed
-15. In the top menu, select **Services**, then select **Update Management**
-16. Select the **CUSTOM** radio button
-17. Select **change**, select the **Log Analytics Workspace** that was deployed with the lab ARM template
-18. Select all the virtual machines, then select **Enable**
-19. Browse to your resource group, then select your Log Analytics workspace
+8. Select all the virtual machines, then select **Enable**.
+9. Navigate back to the **Virtual Machines** blade, again highlight the **paw-1**, **web-1**, **db-1** and **linux-1** virtual machines that were deployed.
+10. In the top menu, select **Services**, then select **Inventory**.
+11. Select the **CUSTOM** radio button.
+12. Select **change**, select the **Log Analytics Workspace** that was deployed with the lab ARM template.
+13. Notice that all the VMs are already enabled for the workspace based on the last task.
+14. Navigate back to the **Virtual Machines** blade, again, highlight the **paw-1**, **web-1**, **db-1** and **linux-1** virtual machines that were deployed.
+15. In the top menu, select **Services**, then select **Update Management**.
+16. Select the **CUSTOM** radio button.
+17. Select **change**, select the **Log Analytics Workspace** that was deployed with the lab ARM template.
+18. Select all the virtual machines, then select **Enable**.
+19. Browse to your resource group, then select your Log Analytics workspace.
 20. Under the **General** section, select the **Solutions** blade, you should see the **ChangeTracking** and **Updates** solutions were added to your workspace. Select the **ChangeTracking** solution.
 
     ![The solutions configured for the workspace are displayed.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/loganalytics-solutions.png "Select the ChangeTracking solution item")
 
-21. Under **Workspace Data Sources** section, select **Solution Targeting (Preview)**
-22. Remove any scopes that are displayed via the ellipses to the right of the items
+21. Under **Workspace Data Sources** section, select **Solution Targeting (Preview)**.
+22. Remove any scopes that are displayed via the ellipses to the right of the items.
 23. Repeat the steps to remove the solution targeting for the **Updates** solution.
 
 ### Task 2: Review MMA Configuration
 
-1. Switch to the Remote Desktop Connection to the **PAW-1**
-2. Open **Event Viewer**
-3. Expand the **Applications and Services Logs**, then select **Operations Manager**
-4. Right-click **Operations Manager**, select **Filter Logs**
+1. Switch to the Remote Desktop Connection to the **PAW-1**.
+2. Open **Event Viewer**.
+3. Expand the **Applications and Services Logs**, then select **Operations Manager**.
+4. Right-click **Operations Manager**, select **Filter Logs**.
 
     ![The event viewer is displayed with the click path highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/eventviewer-operations-mgr.png "Filter the Operations Manager event logs")
 
@@ -1010,10 +1010,10 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
 ### Task 2: Adaptive Application Controls
 
-1. Switch to the Azure Portal
-2. Select **Azure Security Center**
-3. In the blade menu, scroll to the **ADVANCED CLOUD DEFENSE** section and select **Adaptive application controls**
-4. You will likely have several groups displayed, find the one that has your newly created lab VMs
+1. Switch to the Azure Portal.
+2. Select **Azure Security Center**.
+3. In the blade menu, scroll to the **ADVANCED CLOUD DEFENSE** section and select **Adaptive application controls**.
+4. You will likely have several groups displayed, find the one that has your newly created lab VMs.
 
    ![Machine groupings is displayed.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/securitycenter-grouping.png "Azure automatically created a group for your VMs")
 
@@ -1021,51 +1021,51 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
    ![The discovered applications are displayed.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/securitycenter-whitelistingrules.png "Notice the applications that were executed on the machine are displayed")
 
-6. In the top menu, select **Group settings**
-7. Review the available settings
+6. In the top menu, select **Group settings**.
+7. Review the available settings.
 
 > **NOTE** As of June 2020, the **Enforce** option is temporarily disabled.
 
 ### Task 3: File Integrity Monitoring
 
-1. Switch to the Azure Portal
-2. Select Azure Security Center
-3. In the blade menu, scroll to the **ADVANCED CLOUD DEFENSE** section and select **File Integrity Monitoring**
-4. For the log workspace tied to your lab environment virtual machines, if displayed, select **Upgrade Plan**, then select **Try File Integrity Monitoring**
-5. Select the workspace only, then select **Upgrade**
-6. Select the **Continue without installing agents** link
+1. Switch to the Azure Portal.
+2. Select Azure Security Center.
+3. In the blade menu, scroll to the **ADVANCED CLOUD DEFENSE** section and select **File Integrity Monitoring**.
+4. For the log workspace tied to your lab environment virtual machines, if displayed, select **Upgrade Plan**, then select **Try File Integrity Monitoring**.
+5. Select the workspace only, then select **Upgrade**.
+6. Select the **Continue without installing agents** link.
 
    ![The continue without installing agents link is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-enable.png "Select the continue without installing agents link")
 
-7. If displayed, select **Enable**, otherwise simply select the workspace
-8. In the menu, select **Settings**
+7. If displayed, select **Enable**, otherwise simply select the workspace.
+8. In the menu, select **Settings**.
 
     ![The Settings link is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-settings.png "Select the settings link")
 
-9. Select the **Windows Files** tab
-10. Select **+Add**
-11. For the item name, type **HOSTS**
-12. For the path, type **c:\windows\system32\drivers\etc\\\***
-13. Select **Save**
+9. Select the **Windows Files** tab.
+10. Select **+Add**.
+11. For the item name, type **HOSTS**.
+12. For the path, type **c:\windows\system32\drivers\etc\\\***.
+13. Select **Save**.
 
     ![The settings page is displayed with the links highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-addentry.png "Add a new file integrity monitoring item")
 
-14. Select the **File Content** tab
-15. Select **Link**, then select the storage account tied to your lab
+14. Select the **File Content** tab.
+15. Select **Link**, then select the storage account tied to your lab.
 
     > **NOTE** It will take 30-60 minutes for Log Analytics and its management packs to execute on all your VMs. As you may not have that much time with this lab, screen shots are provided as to what results you will eventually get.
 
     ![The file content page is displayed with the links highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-filecontent.png "Link a storage account for file changes")
 
-16. Switch to the Remote Desktop Connection to the **PAW-1**
-17. Open the **c:\windows\system32\drivers\etc\hosts** file
+16. Switch to the Remote Desktop Connection to the **PAW-1**.
+17. Open the **c:\windows\system32\drivers\etc\hosts** file.
 18. Add the following entry:
 
     ```cmd
     10.0.0.6    linux-1
     ```
 
-19. Save the file
+19. Save the file.
 20. After about 30-60 minutes, the Log Analytics workspace will start to pickup changes to your files, registry settings and windows services:
 
     ![The file changes are saved to the logs of the workspace.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-logchanges.png "Review the file change logs for the paw-1 machine in the log analytics workspace")
@@ -1076,34 +1076,34 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 
 ### Task 4: Disk Encryption
 
-1. Switch to the Azure Portal
-2. Browse to your resource group
-3. Browse to your key vault
-4. In the blade menu under **Settings**, select **Access Policies**
-5. Select the **Azure Disk Encryption for volume encryption** checkbox
+1. Switch to the Azure Portal.
+2. Browse to your resource group.
+3. Browse to your key vault.
+4. In the blade menu under **Settings**, select **Access Policies**.
+5. Select the **Azure Disk Encryption for volume encryption** checkbox.
 
    ![The click path above is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-snapshots.png "Enable the key vault for disk encryption activities")
 
-6. Select **Save**
-7. Browse to your resource group
-8. Select the **linux-1** virtual machine
-9. In the blade menu, select **Disks**
-10. In the top menu, select **Encryption**
+6. Select **Save**.
+7. Browse to your resource group.
+8. Select the **linux-1** virtual machine.
+9. In the blade menu, select **Disks**.
+10. In the top menu, select **Encryption**.
 
     ![The click path above is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-snapshots.png "Browse to configure disk encryption for the linux-1 os disk")
 
-11. For **Disks to encrypt**, select **OS Disk**
-12. Select the **Select a key vault and key for encryption** link
-13. Select the lab key vault
-14. For the key, select **Create new**
-15. For the name, type **vm-disk-key**
-16. Select **Create**
+11. For **Disks to encrypt**, select **OS Disk**.
+12. Select the **Select a key vault and key for encryption** link.
+13. Select the lab key vault.
+14. For the key, select **Create new**.
+15. For the name, type **vm-disk-key**.
+16. Select **Create**.
 
     ![Select the lab key vault.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/diskencryption-selectkeyvault.png "Select the lab key vault")
 
-17. For the **Version**, select the new version
-18. Select **Select**
-19. Select **Save**, then select **Yes** when prompted
+17. For the **Version**, select the new version.
+18. Select **Select**.
+19. Select **Save**, then select **Yes** when prompted.
 
 > **NOTE** Disk encryption can take some time, move on to the next exercises.
 
