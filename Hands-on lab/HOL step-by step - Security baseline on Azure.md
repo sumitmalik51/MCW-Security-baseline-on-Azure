@@ -125,7 +125,7 @@ Synopsis: In this exercise, attendees will secure a Privileged Access Workstatio
 
 2. Select **Security Center,** then under **ADVANCED CLOUD DEFENSE** select **Just in time VM access**.
 
-    ![Security Center is highlighted on the left side of the Azure portal, and Just in time VM access is highlighted to the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image9.png)
+    ![Security Center is highlighted on the left side of the Azure portal, and Just in time VM access is highlighted to the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image9.png "Security Center VM Access")
 
     > **Note**: Your subscription may not be set up with the **Standard** tier; if that is the case then do the following:
 
@@ -971,7 +971,9 @@ Synopsis: Azure Security Center provides several advanced security and threat de
     ![The custom configuration dialog is displayed with the log analytics workspace select along with the matching automation account.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/virtual-machines-svcs-changetracking-config2.png "Select the resource group log analytics workspace and matching automation account")
 
 8. Select all the virtual machines, then select **Enable**.
+
 9. Navigate back to the **Virtual Machines** blade, again highlight the **paw-1**, **web-1**, **db-1** and **linux-1** virtual machines that were deployed.
+
 10. In the top menu, select **Services**, then select **Inventory**.
 11. Select the **CUSTOM** radio button.
 12. Select **change**, select the **Log Analytics Workspace** that was deployed with the lab ARM template.
@@ -1066,7 +1068,7 @@ Synopsis: Azure Security Center provides several advanced security and threat de
     ```
 
 19. Save the file.
-20. After about 30-60 minutes, the Log Analytics workspace will start to pickup changes to your files, registry settings and windows services:
+20. After about 30-60 minutes, the Log Analytics workspace will start to pick up changes to your files, registry settings and windows services:
 
     ![The file changes are saved to the logs of the workspace.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-logchanges.png "Review the file change logs for the paw-1 machine in the log analytics workspace")
 
