@@ -1081,16 +1081,16 @@ Synopsis: Azure Security Center provides several advanced security and threat de
 3. Browse to your key vault.
 4. In the blade menu under **Settings**, select **Access Policies**.
 5. Select the **Azure Disk Encryption for volume encryption** checkbox.
-
-   ![The click path above is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-snapshots.png "Enable the key vault for disk encryption activities")
-
 6. Select **Save**.
+
+   ![The click path above is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/keyvault-diskencrypt.png "Enable the key vault for disk encryption activities")
+
 7. Browse to your resource group.
 8. Select the **linux-1** virtual machine.
 9. In the blade menu, select **Disks**.
 10. In the top menu, select **Encryption**.
 
-    ![The click path above is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/fileintegrity-snapshots.png "Browse to configure disk encryption for the linux-1 os disk")
+    ![The click path above is highlighted.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/diskencryption.png "Browse to configure disk encryption for the linux-1 os disk")
 
 11. For **Disks to encrypt**, select **OS Disk**.
 12. Select the **Select a key vault and key for encryption** link.
