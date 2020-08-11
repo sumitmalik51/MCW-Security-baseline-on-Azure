@@ -4,7 +4,7 @@ Contoso Ltd is a multinational corporation, headquartered in the United States t
 
 They are exploring a lift and shift strategy to Azure, but have a large focus on Azure Security and Privacy features.
 
-February 2020
+July 2020
 
 ## Target audience
 

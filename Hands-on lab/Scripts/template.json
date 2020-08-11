@@ -23,6 +23,23 @@
     "vmSize": {
       "defaultValue": "Standard_E2s_v3",
       "type": "string"
+    },
+    "region": {
+      "defaultValue": "East US 2",
+      "type": "string",
+      "allowedValues": [
+        "Australia Southeast",
+        "Canada Central",
+        "Central India",
+        "East US 2",
+        "Japan East",
+        "South Central US",
+        "Southeast Asia",
+        "UK South",
+        "West Cental US",
+        "West Europe",
+        "West US 2"
+      ]
     }
   },
   "variables": {
@@ -37,20 +54,48 @@
     "publicIpAddressName": "dsvm-ip",
     "dsvmdnsName": "[concat('dsvm',uniqueString(resourceGroup().id))]",
     "publicIpAddressType": "Dynamic",
-    "diagStorageAccountName": "[concat('diagstor', uniqueString(resourceGroup().id))]"
+    "diagStorageAccountName": "[concat('diagstor', uniqueString(resourceGroup().id))]",
+    "automationMap" : {
+      "Australia Southeast" : { "region": "Australia Southeast"},
+      "Canada Central" : { "region": "Canada Central"},
+      "Central India" : { "region": "Central India"},
+      "East US" : { "region": "East US"},
+      "East US 2" : { "region": "East US"},
+      "Japan East" : { "region": "Japan East"},
+      "South Central US" : { "region": "South Central US"},
+      "Southeast Asia" : { "region": "Southeast Asia"},
+      "UK South" : { "region": "UK South"},
+      "West Cental US" : { "region": "West Cental US 2"},
+      "West Cental US 2" : { "region": "West Cental US 2"},
+      "West Europe" : { "region": "West Europe"},
+      "West US 2" : { "region": "West US 2"}
+    }
   },
   "resources": [
     {
+      "type": "Microsoft.Automation/automationAccounts",
+      "apiVersion": "2015-10-31",
+      "name": "[concat('azseclog', uniqueString(resourceGroup().id))]",
+      "location": "[parameters('region')]",
+      "properties": {
+          "sku": {
+              "name": "Basic"
+          }
+      }
+  },
+    {
       "type": "microsoft.operationalinsights/workspaces",
       "name": "[concat('azseclog', uniqueString(resourceGroup().id))]",
-      "apiVersion": "2015-11-01-preview",
-      "location": "eastus",
+      "apiVersion": "2020-03-01-preview",
+      "location": "[variables('automationMap')[parameters('region')].region]",
       "scale": null,
       "properties": {
           "sku": {
               "name": "Standalone"
           },
-          "retentionInDays": 31
+          "retentionInDays": 31,
+          "publicNetworkAccessForIngestion": "Enabled",
+          "publicNetworkAccessForQuery": "Enabled"
       },
       "dependsOn": []
 },
@@ -58,7 +103,7 @@
       "name": "[variables('virtualMachineName')]",
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2016-04-30-preview",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Network/networkInterfaces/', variables('DSVM-networkInterfaceName'))]"
       ],
@@ -107,7 +152,7 @@
       "name": "[variables('virtualNetworkName')]",
       "type": "Microsoft.Network/virtualNetworks",
       "apiVersion": "2017-08-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
@@ -128,7 +173,7 @@
       "name": "[variables('DSVM-networkInterfaceName')]",
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2016-09-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]",
         "[concat('Microsoft.Network/publicIpAddresses/', variables('publicIpAddressName'))]",
@@ -158,7 +203,7 @@
       "name": "[variables('publicIpAddressName')]",
       "type": "Microsoft.Network/publicIpAddresses",
       "apiVersion": "2017-08-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "publicIpAllocationMethod": "[variables('publicIpAddressType')]",
         "dnsSettings": {
@@ -173,7 +218,7 @@
       "name": "[variables('networkSecurityGroupName')]",
       "type": "Microsoft.Network/networkSecurityGroups",
       "apiVersion": "2017-06-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "securityRules": [
           {
@@ -226,7 +271,7 @@
       "kind": "Storage",
       "name": "[variables('diagStorageAccountName')]",
       "apiVersion": "2017-10-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "supportsHttpsTrafficOnly": "false",
         "encryption": {
@@ -247,7 +292,7 @@
       "type": "Microsoft.Network/virtualNetworks",
       "name": "dbVnet",
       "apiVersion": "2017-08-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
@@ -269,7 +314,7 @@
       "type": "Microsoft.Network/virtualNetworks",
       "name": "mainVNet",
       "apiVersion": "2017-08-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
@@ -290,7 +335,7 @@
       "type": "Microsoft.Network/virtualNetworks",
       "name": "webVNet",
       "apiVersion": "2017-08-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
@@ -383,7 +428,7 @@
       "type": "Microsoft.Network/networkSecurityGroups",
       "name": "DbTrafficOnly",
       "apiVersion": "2017-06-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "securityRules": [
 			{
@@ -412,9 +457,23 @@
       "type": "Microsoft.Network/networkSecurityGroups",
       "name": "paw-1-nsg",
       "apiVersion": "2017-06-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
-        "securityRules": [ ]
+        "securityRules": [ 
+          {
+            "name": "default-allow-rdp",
+            "properties": {
+              "priority": 1030,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "3389"
+            }
+          }
+        ]
       },
       "dependsOn": [ ]
     },
@@ -422,7 +481,7 @@
       "type": "Microsoft.Network/networkSecurityGroups",
       "name": "WebTrafficOnly",
       "apiVersion": "2017-06-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "securityRules": [
 			{
@@ -451,7 +510,7 @@
       "type": "Microsoft.Sql/servers",
       "name": "[parameters('sqlservername')]",
       "apiVersion": "2015-05-01-preview",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "administratorLogin": "[parameters('adminUsername')]",
         "administratorLoginPassword": "[parameters('adminPassword')]",
@@ -462,7 +521,7 @@
           "type": "databases",
           "name": "[parameters('databaseName')]",
           "apiVersion": "2014-04-01-preview",
-          "location": "[resourceGroup().location]",
+          "location": "[parameters('region')]",
           "properties": {
             "collation": "SQL_Latin1_General_CP1_CI_AS",
             "edition": "Standard",
@@ -477,7 +536,7 @@
           "type": "firewallrules",
           "name": "AllowAllWindowsAzureIps",
           "apiVersion": "2014-04-01-preview",
-          "location": "[resourceGroup().location]",
+          "location": "[parameters('region')]",
           "properties": {
             "endIpAddress": "0.0.0.0",
             "startIpAddress": "0.0.0.0"
@@ -489,10 +548,95 @@
       ]
     },
     {
+      "type": "Microsoft.Compute/virtualMachines",
+      "apiVersion": "2019-07-01",
+      "name": "linux-1",
+      "location": "[parameters('region')]",
+      "dependsOn": [
+        "[concat('Microsoft.Network/networkInterfaces/', 'linux-1-nic')]",
+        "[concat('Microsoft.Storage/storageAccounts/', variables('diagStorageAccountName'))]"
+      ],
+      "properties": {
+          "hardwareProfile": {
+              "vmSize": "Standard_DS1_v2"
+          },
+          "storageProfile": {
+              "imageReference": {
+                  "publisher": "Canonical",
+                  "offer": "UbuntuServer",
+                  "sku": "18.04-LTS",
+                  "version": "latest"
+              },
+              "osDisk": {
+                  "osType": "Linux",
+                  "name": "linux-1-os",
+                  "createOption": "FromImage",
+                  "caching": "ReadWrite",
+                  "managedDisk": {
+                      "storageAccountType": "Premium_LRS"
+                  },
+                  "diskSizeGB": 30
+              },
+              "dataDisks": []
+          },
+          "osProfile": {
+              "computerName": "linux-1",
+              "adminUsername": "[parameters('adminUsername')]",
+              "adminPassword": "[parameters('adminPassword')]",
+              "linuxConfiguration": {
+                  "disablePasswordAuthentication": false,
+                  "provisionVMAgent": true
+              },
+              "secrets": [],
+              "allowExtensionOperations": true
+          },
+          "networkProfile": {
+              "networkInterfaces": [
+                  {
+                      "id": "[resourceId('Microsoft.Network/networkInterfaces', 'linux-1-nic')]"
+                  }
+              ]
+          },
+          "diagnosticsProfile": {
+              "bootDiagnostics": {
+                  "enabled": true,
+                  "storageUri": "[reference(resourceId(resourceGroup().name, 'Microsoft.Storage/storageAccounts', variables('diagStorageAccountName')), '2015-06-15').primaryEndpoints['blob']]"
+              }
+          }
+      }
+  },
+  {
+    "name": "linux-1-nic",
+    "type": "Microsoft.Network/networkInterfaces",
+    "apiVersion": "2016-09-01",
+    "location": "[parameters('region')]",
+    "dependsOn": [
+      "[concat('Microsoft.Network/virtualNetworks/', 'mainVNet')]",
+      "[concat('Microsoft.Network/networkSecurityGroups/', 'paw-1-nsg')]"
+    ],
+    "properties": {
+      "ipConfigurations": [
+        {
+          "name": "ipconfig1",
+          "properties": {
+            "subnet": {
+              "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'mainVNet', 'default')]"
+            },
+            "privateIPAllocationMethod": "Dynamic"
+          }
+        }
+      ],
+      "networkSecurityGroup": {
+        "id": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', 'paw-1-nsg')]"
+      }
+    }
+  }
+  ,
+    {
       "name": "paw-1",
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2016-04-30-preview",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Network/networkInterfaces/', 'paw-1-nic')]",
         "[concat('Microsoft.Storage/storageAccounts/', variables('diagStorageAccountName'))]"
@@ -543,7 +687,7 @@
       "name": "paw-1-nic",
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2016-09-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Network/publicIpAddresses/', 'paw-1-ip')]",
         "[concat('Microsoft.Network/virtualNetworks/', 'mainVNet')]",
@@ -573,7 +717,7 @@
       "name": "paw-1-ip",
       "type": "Microsoft.Network/publicIPAddresses",
       "apiVersion": "2017-08-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "publicIPAddressVersion": "IPv4",
         "publicIPAllocationMethod": "Dynamic"
@@ -583,7 +727,7 @@
       "name": "db-1",
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2016-04-30-preview",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Network/networkInterfaces/', 'db-1-nic')]",
         "[concat('Microsoft.Storage/storageAccounts/', variables('diagStorageAccountName'))]"
@@ -634,7 +778,7 @@
       "name": "db-1-nic",
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2016-09-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Network/virtualNetworks/', 'dbVnet')]",
         "[concat('Microsoft.Network/networkSecurityGroups/', 'DbTrafficOnly')]"
@@ -660,7 +804,7 @@
       "name": "web-1",
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2016-04-30-preview",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Network/networkInterfaces/', 'web-1-nic')]",
         "[concat('Microsoft.Storage/storageAccounts/', variables('diagStorageAccountName'))]"
@@ -711,7 +855,7 @@
       "name": "web-1-nic",
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2016-09-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Network/publicIpAddresses/', 'web-1-ip')]",
         "[concat('Microsoft.Network/virtualNetworks/', 'webVNet')]",
@@ -741,7 +885,7 @@
       "name": "web-1-ip",
       "type": "Microsoft.Network/publicIpAddresses",
       "apiVersion": "2017-08-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "publicIPAddressVersion": "IPv4",
         "publicIpAllocationMethod": "Dynamic"
@@ -751,7 +895,7 @@
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat('web-1','/', 'dscExtension')]",
       "apiVersion": "2015-05-01-preview",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', 'web-1')]"
       ],
@@ -771,10 +915,32 @@
       }
     },
     {
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "[concat('db-1','/', 'csExtension')]",
+      "apiVersion": "2018-10-01",
+      "location": "[parameters('region')]",
+      "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', 'db-1')]"
+      ],
+      "properties": {
+        "publisher": "Microsoft.Compute",
+        "type": "CustomScriptExtension",
+        "typeHandlerVersion": "1.7",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "fileUris" : [
+            "https://raw.githubusercontent.com/givenscj/MCW-Security-baseline-on-Azure/master/Hands-on%20lab/Scripts/Set_FirewallRule/Set_FirewallRule.ps1"
+          ],
+          "commandToExecute" : "powershell.exe -ExecutionPolicy bypass -File Set_FirewallRule.ps1"
+        },
+        "protectedSettings": null
+      }
+    },
+    {
       "type": "Microsoft.KeyVault/vaults",
       "name": "[concat('kv', uniqueString(resourceGroup().id))]",
       "apiVersion": "2015-06-01",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('region')]",
       "properties": {
         "sku": {
           "family": "A",
