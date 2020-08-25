@@ -641,12 +641,14 @@ function InstallPutty()
 	
 	if (!$item)
 	{
-		$downloadNotePad = "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi";
+        #$downloadPutty = "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi";
+        #NOTE: If this errors, search for the latest version.
+        $downloadPutty = "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.74-installer.msi";
 
         mkdir c:\temp -ea silentlycontinue 
 		
 		#download it...		
-		Start-BitsTransfer -Source $DownloadNotePad -DisplayName Notepad -Destination "c:\temp\putty.msi"
+		Start-BitsTransfer -Source $downloadPutty -DisplayName Notepad -Destination "c:\temp\putty.msi"
         
         msiexec.exe /I c:\temp\Putty.msi /quiet
 	}
