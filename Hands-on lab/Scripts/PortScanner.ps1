@@ -641,8 +641,7 @@ function InstallPutty()
 	
 	if (!$item)
 	{
-        #$downloadPutty = "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.73-installer.msi";
-        #NOTE: If this errors, search for the latest version.
+        #NOTE: If this errors, search for the latest version - https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
         $downloadPutty = "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.74-installer.msi";
 
         mkdir c:\temp -ea silentlycontinue 
