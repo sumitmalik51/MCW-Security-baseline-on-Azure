@@ -1,3 +1,6 @@
+### Let us know how we’re doing!  
+Please take a moment to fill out the [Microsoft Cloud Workshop Survey]( https://forms.office.com/Pages/DesignPage.aspx#FormId=v4j5cvGGr0GRqy180BHbRyEtIpX7sDdChuWsXhzKJXJUNjFBVkROWDhSSVdYT0dSRkY4UVFCVzZBVy4u&Token=d8027e9aa480420fa80d97e143eee1ed) and help us improve our offerings.
+
 # Security baseline on Azure
 
 Contoso Ltd is a multinational corporation, headquartered in the United States that provides insurance solutions worldwide. Its products include accident and health insurance, life insurance, travel, home, and auto coverage. Contoso manages data collection services by sending mobile agents directly to the insured to gather information as part of the data collection process for claims from an insured individual. These mobile agents are based all over the world and are residents of the region in which they work. Mobile agents are managed remotely through regional corporate offices.
