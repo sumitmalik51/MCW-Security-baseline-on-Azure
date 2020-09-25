@@ -893,20 +893,6 @@ In this exercise, attendees will utilize Network Security Groups to ensure that 
 
 13. Select **OK**.
 
-### Task 6: Execute a port scan
-
-1. Switch your Remote Desktop connection to the **paw-1** virtual machine.
-
-2. Uncomment the following line of the script, and press **F5**.
-
-    ```PowerShell
-    #TestPortRange $computers 80 443;
-    ```
-
-   ![The PowerShell ISE window displays uncommented PowerShell script port scan command.](media/2020-01-12-12-49-13.png "Running the uncommented PowerShell script")
-
-    > **Note**: You should see the basic ports scanned, and then a port scan from 80 to 443. This will generate many security center logs for the Network Security Groups which will be used in the Custom Alert in the next set of exercises. Continue to the next exercise while the script executes.
-
 
 ## Exercise 5: Azure Sentinel logging and reporting
 
