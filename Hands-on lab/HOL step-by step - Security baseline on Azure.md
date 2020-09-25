@@ -123,9 +123,9 @@ In this exercise, attendees will secure a Privileged Access Workstation (PAW) wo
 
 1. In a browser, navigate to your Azure portal (<https://portal.azure.com>).
 
-2. Select **Security Center,** then under **ADVANCED CLOUD DEFENSE** select **Just in time VM access**.
+2. Select **Security Center,** then under **Cloud Security** select **Azure defender** and then select Just-In-time-Vm access.
 
-    ![Security Center is highlighted on the left side of the Azure portal, and Just in time VM access is highlighted to the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image9.png "Security Center VM Access")
+    ![Security Center is highlighted on the left side of the Azure portal, and Just in time VM access is highlighted to the right.](images/1.png "Security Center VM Access")
 
     > **Note**: Your subscription may not be set up with the **Standard** tier; if that is the case then do the following:
 
@@ -136,9 +136,9 @@ In this exercise, attendees will secure a Privileged Access Workstation (PAW) wo
    - Select **Save**.
    - Navigate back to Security Center, select **Just in time VM access**.
 
-3. Select the **Configured** tab, and verify the lab VMs (db-1, paw-1 and web-1) are displayed.  If not, select the **Recommended** tab, and then check the checkbox to select the lab VMs (db-1, paw-1 and web-1), and then select the **Enable JIT on 3 VMs** link.
+3. Select the **Configured** tab, and verify the lab VMs (db-1, paw-1 and web-1) are displayed.  If not, select the **Not Configured** tab, and then check the checkbox to select the lab VMs (db-1, paw-1 and web-1), and then select the **Enable JIT on 3 VMs** link.
 
-    ![In the Virtual machines list, the Recommended tab is selected and the db-1, paw-1 and web-1 virtual machines are selected for Just-in-time access.](media/2019-12-18-16-08-30.png "Virtual Machines Selected")
+    ![In the Virtual machines list, the Recommended tab is selected and the db-1, paw-1 and web-1 virtual machines are selected for Just-in-time access.](media/2.png "Virtual Machines Selected")
 
     > **Note**: It could take up to 10 minutes for new VMs to show up if you upgraded to standard tier security.  Also note that it is possible new VMs display in the **No recommendation** tab until a backend process moves them to the **Recommended** tab.  In you find the VMs do not show up after 10 minutes, you can manually enable JIT by choosing the **Configuration** tab in the VMs configuration blade and then **Enable JIT Access**.
 
@@ -150,7 +150,7 @@ In this exercise, attendees will secure a Privileged Access Workstation (PAW) wo
 
 5. After a few minutes, you should see the virtual machines moved to the **Configured** tab.
 
-    ![The virtual machines are now on the configured tab.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image11.png "The JIT Configured VMs are displayed")
+    ![The virtual machines are now on the configured tab.](images/2.png "The JIT Configured VMs are displayed")
 
 ### Task 2: Perform a JIT request
 
@@ -246,7 +246,9 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 14. On the **Import Settings** dialog, select **Next**.
 
-15. On the **Database Settings** dialog, select **Next**.
+15. On the **Database Settings** dialog, Make sure you select **S0** under the Service Objective and then select **Next**.
+
+    ![Results is highlighted on the left side of the Import Data-tier Application dialog box, and at right, many items are listed under Operation Complete. Next is highlighted at the bottom.](images/imgs0.png "View the results")
 
     > **Note**: If you get an error, close and re-open SQL Management Studio try the import again. If that does not work, you may need to download the latest SQL Management Studio from [here](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017). In some instances, the latest version may not work, version 17.3 is known to deploy the package properly.  You should also be aware that bacpac files exported from some SQL Server instances cannot be deployed to Azure SQL Servers.  We have also included a .bak file of the Insurance database that you can use to restore from.
 
