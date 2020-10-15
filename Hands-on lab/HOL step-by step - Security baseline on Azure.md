@@ -206,7 +206,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 7. Enter the database server name from above.
 
-8. Enter the username and password used from the Azure Template deployment (**wsadmin** - **p\@ssword1rocks**).
+8. Enter the username and password used from the Azure Template deployment (**wsadmin** - **p!ssword1rocks**).
 
     > **Note**: If you changed the username and password in the ARM template deployment, use those values instead.
 
