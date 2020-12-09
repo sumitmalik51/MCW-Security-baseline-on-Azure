@@ -119,22 +119,6 @@ In this exercise, attendees will secure a Privileged Access Workstation (PAW) wo
 
     ![Security Center is highlighted on the left side of the Azure portal, and Just in time VM access is highlighted to the right.](images/1.png "Security Center VM Access")
 
-    > **Note**: Your subscription may not be set up with the **Standard** tier; if that is the case then do the following:
-
-   - In the **Security Center** blade, select **Pricing & settings**.
-   - Select your subscription.
-   - Select **Pricing Tier**.
-   - Select **Standard**.
-   - Select **Save**.
-   - Navigate back to Security Center, select **Just in time VM access**.
-
-3. Select the **Configured** tab, and verify the lab VMs (db-1, paw-1 and web-1) are displayed.  If not, select the **Not Configured** tab, and then check the checkbox to select the lab VMs (db-1, paw-1 and web-1), and then select the **Enable JIT on 3 VMs** link.
-
-    ![In the Virtual machines list, the Recommended tab is selected and the db-1, paw-1 and web-1 virtual machines are selected for Just-in-time access.](media/2.png "Virtual Machines Selected")
-
-    > **Note**: It could take up to 10 minutes for new VMs to show up if you upgraded to standard tier security.  Also note that it is possible new VMs display in the **No recommendation** tab until a backend process moves them to the **Recommended** tab.  In you find the VMs do not show up after 10 minutes, you can manually enable JIT by choosing the **Configuration** tab in the VMs configuration blade and then **Enable JIT Access**.
-
-    ![Configuration and Enable JIT Access is highlighted in the Azure portal.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image119.png "Enable JIT")
 
 4. In the configuration window that opens, review the settings, then select **Save**.
 
