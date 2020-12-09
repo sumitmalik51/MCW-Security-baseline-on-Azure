@@ -669,7 +669,7 @@ In this exercise, attendees will utilize Network Security Groups to ensure that 
 
 3. In the dialog, select **Download RDP file Anyway**.  Open the downloaded RDP file and connect to the Virtual Machine.
 
-    > **Note**: Default username is **wsadmin** with **p\@ssword1rocks** as password and you may need to request JIT Access if you have taken a break between exercises.
+    > **Note**: Default username is **wsadmin** with **p!ssword1rocks** as password and you may need to request JIT Access if you have taken a break between exercises.
 
 4. In the **paw-1** virtual machine, open **Windows PowerShell ISE** as **administrator**.
 
