@@ -191,21 +191,21 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 1. Switch to your Azure portal, select **All Services** then search for **SQL Servers**.  Select **SQL Servers**.
 
-    ![All services is highlighted on the left side of the Azure portal, and SQL servers is highlighted to the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image18.png "Select SQL Servers")
+    ![](images2/exercise2/1.png)
 
 2. Select the **Azure SQL** database server you created using the Azure Manager template (Ex: AzureSecurity-INIT).
 
 3. Select **SQL databases** under the Settings section, then select the **SampleDB** database.
 
-    ![SQL databases is selected under Settings on the left, and at right, SampleDB is selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image19.png "Select the SampleDB database")
+    ![](images2/exercise2/2.png)
 
 4. In the summary section, select the **Show database connection strings**.
 
-    ![In the summary section beneath Connection strings the Show database connection strings link is highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image20.png "Select the Show database connection strings")
+    ![](images2/exercise2/3.png)
 
 5. Take note of the connection string for later in this lab, specifically the **Server** parameter:
 
-    ![The Server parameter is listed under ADO.NET (SQL authentication) on the ADO.NET tab.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image21.png "Note the Server parameter")
+    ![](images2/exercise2/4.png)
 
 6. In the Lab VM, open **SQL Server Management Studio**.
 
@@ -235,7 +235,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 11. In the Introduction dialog, select **Next**.
 
-12. Select **Browse**, navigate to the extracted **/Hands-on- lab/Database** directory, and select the **Insurance.bacpac** file.
+12. Select **Browse**, navigate to the extracted **C:\MCW-Security-baseline-on-Azure\Hands-on lab\Database** directory, and select the **Insurance.bacpac** file.
 
     ![Insurance.bacpac is selected in the Browse dialog box.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image25.png "Select Insurance.bacpac")
 
