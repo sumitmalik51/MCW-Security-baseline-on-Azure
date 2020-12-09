@@ -153,33 +153,33 @@ In this exercise, attendees will secure a Privileged Access Workstation (PAW) wo
 
 1. Select the **paw-1** virtual machine, and then select **Request access**.
 
-    ![On the Virtual machines screen, the first listed virtual machine name is selected and highlighted (paw-1), as is Request access button above it.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image12.png "Request access for paw-1")
+    ![](images2/exercise1/task2/1.png)
 
 2. For each of the ports, select the **On** toggle button, notice how the default IP settings is **My IP**.
 
-    ![On is selected under the Toggle column for all four of the ports listed under paw-1.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image13.png "Select on for each of the ports")
+    ![](images2/exercise1/task2/2.png)
 
 3. At the bottom of the dialog, select **Open ports**. After a few moments, you should now see the **APPROVED** requests have been incremented and the **Last Access** is set to **Active now.**.
 
-    ![On the Virtual machines screen, the paw-1 virtual machine displays 1 Request as approved, and the last access column shows Active now.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image14.png "View Approved and Last Access status")
+    ![](images2/exercise1/task2/3.png)
 
     > **Note**  If you did not wait for your VMs and virtual networks to be fully provisioned via the ARM template, you may get an error.
 
 4. Select the ellipses, then select **Activity Log**, you will be able to see a history of who requests access to the virtual machines.
 
-    ![Activity Log is highlighted in the shortcut menu for the last user.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image15.png "View the Activity Log")
+    ![](images2/exercise1/task2/4.png)
 
     > **Note**: These entries will persist after you have deleted the VMs. You will need to manually remove them after VM deletion.
 
 5. In the Azure Portal main menu, select **All Services**, then type **Network**, then select **Network security groups**.
 
-    ![All services is highlighted in the left menu of the Azure portal, and the Network security groups is highlighted in the filtered list to the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image16.png "Select paw-1-nsg")
+    ![](images2/exercise1/task2/5.png)
 
 6. In the filter textbox, type **paw-1-nsg**, then select the **paw-1-nsg** network security group.
 
 7. Select **Inbound security rules.** You should now see inbound security rules set up by JIT Access.
 
-    ![The first four listed items are highlighted under Inbound security rules.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image17.png "View the inbound security rules set up by JIT Access")
+    ![](images2/exercise1/task2/6.png)
 
 ## Exercise 2: Securing the Web Application and database
 
