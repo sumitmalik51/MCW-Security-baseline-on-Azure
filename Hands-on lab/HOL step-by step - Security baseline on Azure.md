@@ -115,66 +115,71 @@ In this exercise, attendees will secure a Privileged Access Workstation (PAW) wo
 
 1. In a browser, navigate to your Azure portal (<https://portal.azure.com>).
 
-2. Select **Security Center,** then under **Cloud Security** select **Azure defender** and then select Just-In-time-Vm access.
+2. Search for Security center in the search bar.
 
-    ![Security Center is highlighted on the left side of the Azure portal, and Just in time VM access is highlighted to the right.](images/1.png "Security Center VM Access")
+    ![](images2/exercise1/1.png)
+    
+3. First it will show the upgrade page so please upgrade by scrolling down, selecting your subscription and clicking on **upgrade** .
 
-    > **Note**: Your subscription may not be set up with the **Standard** tier; if that is the case then do the following:
+   ![](images2/exercise1/2.png)
+   
+   ![](images2/exercise1/3.png)
+   
+   ![](images2/exercise1/4.png)
+   
+4. Click on **install agents** which pop-up.
 
-   - In the **Security Center** blade, select **Pricing & settings**.
-   - Select your subscription.
-   - Select **Pricing Tier**.
-   - Select **Standard**.
-   - Select **Save**.
-   - Navigate back to Security Center, select **Just in time VM access**.
+    ![](images2/exercise1/5.png)
 
-3. Select the **Configured** tab, and verify the lab VMs (db-1, paw-1 and web-1) are displayed.  If not, select the **Not Configured** tab, and then check the checkbox to select the lab VMs (db-1, paw-1 and web-1), and then select the **Enable JIT on 3 VMs** link.
+5. Search for virtual machines and **Enable JIT VM access** manually for db-1, paw-1, web-1. Find **Configuration** in each virtual machine and click on **Enable just in time**. Dont forget to enable for db-1, paw-1 and web-1.
 
-    ![In the Virtual machines list, the Recommended tab is selected and the db-1, paw-1 and web-1 virtual machines are selected for Just-in-time access.](media/2.png "Virtual Machines Selected")
+    ![](images2/exercise1/6.png)
 
-    > **Note**: It could take up to 10 minutes for new VMs to show up if you upgraded to standard tier security.  Also note that it is possible new VMs display in the **No recommendation** tab until a backend process moves them to the **Recommended** tab.  In you find the VMs do not show up after 10 minutes, you can manually enable JIT by choosing the **Configuration** tab in the VMs configuration blade and then **Enable JIT Access**.
-
-    ![Configuration and Enable JIT Access is highlighted in the Azure portal.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image119.png "Enable JIT")
-
-4. In the configuration window that opens, review the settings, then select **Save**.
-
-    ![In the configuration window, port settings are listed, and Save is highlighted above them.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image10.png "Select Save")
-
-5. After a few minutes, you should see the virtual machines moved to the **Configured** tab.
+6. After a few minutes, you should see the virtual machines moved to the **Configured** tab.
 
     ![The virtual machines are now on the configured tab.](images/2.png "The JIT Configured VMs are displayed")
+
+7. Select on the ellinios button at te end of one of the virtual machines and click on **Edit** and click on **Add** and add the ports **22, 5985 and 5986** .
+
+    ![](images2/exercise1/7.png)
+    
+    ![](images2/exercise1/8.png)
+    
+8. After adding all the ports click on **Save**.
+
+    ![](images2/exercise1/9.png)
 
 ### Task 2: Perform a JIT request
 
 1. Select the **paw-1** virtual machine, and then select **Request access**.
 
-    ![On the Virtual machines screen, the first listed virtual machine name is selected and highlighted (paw-1), as is Request access button above it.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image12.png "Request access for paw-1")
+    ![](images2/exercise1/task2/1.png)
 
 2. For each of the ports, select the **On** toggle button, notice how the default IP settings is **My IP**.
 
-    ![On is selected under the Toggle column for all four of the ports listed under paw-1.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image13.png "Select on for each of the ports")
+    ![](images2/exercise1/task2/2.png)
 
 3. At the bottom of the dialog, select **Open ports**. After a few moments, you should now see the **APPROVED** requests have been incremented and the **Last Access** is set to **Active now.**.
 
-    ![On the Virtual machines screen, the paw-1 virtual machine displays 1 Request as approved, and the last access column shows Active now.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image14.png "View Approved and Last Access status")
+    ![](images2/exercise1/task2/3.png)
 
     > **Note**  If you did not wait for your VMs and virtual networks to be fully provisioned via the ARM template, you may get an error.
 
 4. Select the ellipses, then select **Activity Log**, you will be able to see a history of who requests access to the virtual machines.
 
-    ![Activity Log is highlighted in the shortcut menu for the last user.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image15.png "View the Activity Log")
+    ![](images2/exercise1/task2/4.png)
 
     > **Note**: These entries will persist after you have deleted the VMs. You will need to manually remove them after VM deletion.
 
 5. In the Azure Portal main menu, select **All Services**, then type **Network**, then select **Network security groups**.
 
-    ![All services is highlighted in the left menu of the Azure portal, and the Network security groups is highlighted in the filtered list to the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image16.png "Select paw-1-nsg")
+    ![](images2/exercise1/task2/5.png)
 
 6. In the filter textbox, type **paw-1-nsg**, then select the **paw-1-nsg** network security group.
 
 7. Select **Inbound security rules.** You should now see inbound security rules set up by JIT Access.
 
-    ![The first four listed items are highlighted under Inbound security rules.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image17.png "View the inbound security rules set up by JIT Access")
+    ![](images2/exercise1/task2/6.png)
 
 ## Exercise 2: Securing the Web Application and database
 
@@ -186,21 +191,21 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 1. Switch to your Azure portal, select **All Services** then search for **SQL Servers**.  Select **SQL Servers**.
 
-    ![All services is highlighted on the left side of the Azure portal, and SQL servers is highlighted to the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image18.png "Select SQL Servers")
+    ![](images2/exercise2/1.png)
 
 2. Select the **Azure SQL** database server you created using the Azure Manager template (Ex: AzureSecurity-INIT).
 
 3. Select **SQL databases** under the Settings section, then select the **SampleDB** database.
 
-    ![SQL databases is selected under Settings on the left, and at right, SampleDB is selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image19.png "Select the SampleDB database")
+    ![](images2/exercise2/2.png)
 
 4. In the summary section, select the **Show database connection strings**.
 
-    ![In the summary section beneath Connection strings the Show database connection strings link is highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image20.png "Select the Show database connection strings")
+    ![](images2/exercise2/3.png)
 
 5. Take note of the connection string for later in this lab, specifically the **Server** parameter:
 
-    ![The Server parameter is listed under ADO.NET (SQL authentication) on the ADO.NET tab.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image21.png "Note the Server parameter")
+    ![](images2/exercise2/4.png)
 
 6. In the Lab VM, open **SQL Server Management Studio**.
 
@@ -230,7 +235,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 11. In the Introduction dialog, select **Next**.
 
-12. Select **Browse**, navigate to the extracted **/Hands-on- lab/Database** directory, and select the **Insurance.bacpac** file.
+12. Select **Browse**, navigate to the extracted **C:\MCW-Security-baseline-on-Azure\Hands-on lab\Database** directory, and select the **Insurance.bacpac** file.
 
     ![Insurance.bacpac is selected in the Browse dialog box.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image25.png "Select Insurance.bacpac")
 
@@ -254,13 +259,13 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
     ![In SQL Management Studio, Open is selected in the File menu, and File is selected in the shortcut menu.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image27.png "Open a file")
 
-19. Browse to the extracted GitHub folder, select the **\\Hands-on lab\\Database\\00\_CreateLogin.sql** file.
+19. Browse to the extracted GitHub folder, select the **C:\MCW-Security-baseline-on-Azure\Hands-on lab\Database\00_CreateLogin.sql** file.
 
 20. Ensure that the **master** database is selected.
 
 21. Run the script to create a login called **agent**.
 
-22. Browse to the extracted folder, select the **\\Hands-on lab\\Database\\01\_CreateUser.sql** file.
+22. Browse to the extracted folder, select the **C:\MCW-Security-baseline-on-Azure\Hands-on lab\Database\01_CreateUser.sql** file.
 
 23. Ensure that the **Insurance** database is selected.
 
@@ -268,27 +273,41 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 ### Task 2: Test the web application solution
 
-1. In the extracted directory, double-click the **\\Hands-on lab\\WebApp\\InsuranceAPI\\InsuranceAPI.sln** solution file, and Visual Studio will open.
+1. In the extracted directory, double-click the **C:\MCW-Security-baseline-on-Azure\Hands-on lab\WebApp\\InsuranceAPI\\InsuranceAPI.sln** solution file, and Visual Studio will open.
 
     > **Note**: If prompted, login using your Azure / MSDN account.
 
 2. In the **Solution Explorer**, navigate to and double-click the **Web.config** file to open it.
 
     ![Web.config is highlighted under the InsuranceAPI project in Solution Explorer.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image28.png "Open Web.config")
+    
+3. Change the IIS express to host in **Google Chrome**. Check the below image to do it.
 
-3. Update the web.config (line 77) to point to the **Insurance** database created in Task 2. You should only need to update the server name to point to your Azure SQL Server.
+    ![](images2/exercise2/task2/1.png)
+
+4. Update the web.config (line 77) to point to the **Insurance** database created in Task 2. You should only need to update the server name to point to your Azure SQL Server. Do this by following the next two steps.
 
     ![Line 72 of the Insurance database is highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image29.png "Update the server name in Web.config")
 
-4. Press **F5** to run the **InsuranceAPI** solution.
+4. Find the below in the connection string.Replace it with the azure sql server.
+
+    ![](images2/exercise2/task2/2.png)
+
+5. After changing it should look like this.
+
+    ![](images2/exercise2/task2/3.png)
+
+6. Press **F5** to run the **InsuranceAPI** solution.
 
     > **Note**: If you get an CSC error, right-click the project, select **Clean**.  Next, right-click the project and select **Rebuild**.
 
-5. Test the API for a response by browsing to `http://localhost:24448/api/Users`. Your port number may be different from _24448_. You should see several records returned to the browser. Copy a `UserId` value for the next instruction.
+   ![](images2/exercise2/task2/4.png)
 
-    ![The sample JSON response is returned.](media/2019-12-18-16-59-47.png "Sample JSON Response")
+7. Test the API for a response by browsing to `http://localhost:24448/api/Users`. Your port number may be different from _24448_. You should see several records returned to the browser. Copy a `UserId` value for the next instruction.
 
-6. In the browser window that opens, browse to `http://localhost:24448/api/Users/e91019da-26c8-b201-1385-0011f6c365e9` you should see a json response that shows an unmasked SSN column.
+    ![](images2/exercise2/task2/5.png)
+
+8. In the browser window that opens, browse to `http://localhost:24448/api/Users/e91019da-26c8-b201-1385-0011f6c365e9` you should see a json response that shows an unmasked SSN column.
 
     > **Note**: Depending on your browser, you may need to download to view the json response.
 
@@ -304,7 +323,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 4. Under **Security**, select **Dynamic Data Masking**, then select **+Add Mask**.
 
-    ![Dynamic Data Masking is highlighted on the left, and +Add mask is highlighted on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image31.png "Select +Add mask")
+    ![](images2/exercise2/task3/1.png)
 
 5. Select the **User** table.
 
@@ -312,7 +331,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 7. Select **Add**.
 
-    ![Add is highlighted at the top of the SSN column, and the User table and SSN column are highlighted below.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image32.png "Select Add")
+    ![](images2/exercise2/task3/2.png)
 
 8. Select **Save**, then select **OK**.
 
@@ -350,9 +369,11 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 10. Switch back to the Azure Portal, and select the User_SSN data masking.
 
+    ![](images2/exercise2/task4/1.png)
+
 11. Select **Delete**.
 
-    ![The Delete icon is highlighted under Edit Masking Rule in the Azure portal.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image36.png "Select Delete")
+    ![](images2/exercise2/task4/1_1.png)
 
 12. Select **Save**.
 
@@ -399,20 +420,24 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
     - Select **Access policies**.
 
     - Select **Add New**.
+    
+        ![](images2/exercise2/task4/1_2.png)
 
     - For the principal, select your account.
 
     - Select **Key permissions**, and choose **Select all**.
 
-        ![Select all is selected and highlighted under Key permissions, and below that, Decrypt, Encrypt, Unwrap Key, Wrap Key, Verify, and Sign are selected and highlighted under Cryptographic Operations amid the other selected options.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image40.png "Select all")
-
     - Select **Secret permissions**, and choose **Select all**.
 
     - Select **Certificate permissions**, and choose **Select all**.
 
-    - Select **OK**.
+    - Select **Add**.
+    
+        ![](images2/exercise2/task4/2.png)
 
     - Select **Save**.
+    
+        ![](images2/exercise2/task4/2_1.png)
 
     - Retry the operation.
 
@@ -436,7 +461,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 29. Select your Azure Key Vault, and then select **Keys**. You should see the key created from the SQL Management Studio displayed:
 
-    ![CloudSecurityVault is selected on the left, Keys is selected under Settings from the center menu, and CMKAuto1 is selected under the Unmanaged list on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image44.png "Select your Azure Key Vault")
+    ![](images2/exercise2/task4/3.png)
 
 ## Exercise 3: Migrating to Azure Key Vault
 
@@ -450,11 +475,9 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 2. Select **Key Vaults**, then select your Azure Key Vault.
 
-    ![Key vaults is highlighted on the left side of the Azure portal, and CloudSecurityVault is highlighted on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image45.png "Select your Azure Key Vault")
-
 3. Select **Secrets**, then select **+Generate/Import**.
 
-    ![Secrets is highlighted on the left side of the Azure portal, and Generate/Import is highlighted on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image45.1.png "Create a new secret")
+    ![](images2/exercise3/task1/1.png)
 
 4. For the **Upload Options**, select **Manual**.
 
@@ -464,23 +487,29 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 7. Select **Create**.
 
+    ![](images2/exercise3/task1/2.png)
+
 8. Select **Secrets**.
 
 9. Select **InsuranceAPI**.
 
+    ![](images2/exercise3/task1/2_1.png)
+
 10. Select the current version.
 
-    ![The current version is selected with a status of Enabled under InsuranceAPI Versions.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image46.png "Select the current version")
+    ![](images2/exercise3/task1/2_2.png)
 
 11. Copy and record the secret identifier URL for later use:
 
-    ![The Secret Identifier URL is highlighted under Properties.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image47.png "Copy and record the secret identifier URL")
+    ![](images2/exercise3/task1/3.png)
 
 ### Task 2: Create an Azure Active Directory application
 
 1. In the Azure Portal, select **Azure Active Directory**, then select **App registrations**.
 
-    ![Azure Active Directory is highlighted on the left side of the Azure portal, and App registrations is highlighted on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image48.png "Select App registrations")
+    ![](images2/exercise3/task2/1.png)
+    
+    ![](images2/exercise3/task2/2.png)
 
 2. Select **+New application registration**.
 
@@ -496,7 +525,7 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 7. Copy and record the **Application ID** for later use.
 
-    ![The Application ID and Object ID are highlighted under Essentials for the AzureKeyVaultTest application, and All settings is selected at the bottom.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image50.png "Copy and record the Application ID and Object ID")
+    ![](images2/exercise3/task2/3.png)
 
 8. In the left menu pane, under the **Manage** heading, select **Certificates and secrets** link.
 
@@ -520,7 +549,7 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 3. Select **+ Add Access Policy**.
 
-    ![In the Access policies screen, the + Add Access Policy button is selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image51.png "Add a new access policy")
+    ![](images2/exercise2/task4/1_2.png)
 
 4. Choose **Select principal** field value. In the right-hand pane, type **AzureKeyVaultTest**. Select the item.
 
@@ -1044,24 +1073,6 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
     ![Save is highlighted in Logic Apps Designer, and information about the custom security alert appears below.](media/2020-01-12-14-54-20.png "Save the email alert action")
 
 12. Lastly, after you have created the new Playbook, ensure that the status is **Enabled**.  If not, then select **Enable** in the menu.
-
-### Task 5: Execute Jupyter Notebooks
-
-1. In the **Azure Sentinel** blade, select **Notebooks**.
-
-2. Search for the **Getting Started with Azure Sentinel Notebooks** item.
-
-3. In the right dialog, select **Launch Notebook**.
-
-4. If not already logged in, select your Azure credentials, the GitHub repo will start to clone into your workspace. You will see the GitHub progress meter.
-
-    ![The GitHub progress meter is displayed.](media/2020-01-12-18-06-26.png "GitHub Progress Meter")
-
-5. The notebook should open in the Jupyter notebooks application. It will also start a container kernel for executing the notebook cells.
-
-6. Follow the directions of the notebook while executing each cell. The notebook will required you to setup some supported API accounts to merge external security data such as known bad actors and other geographical information.
-
-    ![The getting started Sentinel notebook is displayed.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/jupyter-sentinel.png "Run the notebook steps")
 
 ### Task 6: Creating reports with Power BI
 
