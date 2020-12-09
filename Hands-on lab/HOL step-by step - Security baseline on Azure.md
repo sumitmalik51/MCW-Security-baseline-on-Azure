@@ -507,7 +507,9 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 1. In the Azure Portal, select **Azure Active Directory**, then select **App registrations**.
 
-    ![Azure Active Directory is highlighted on the left side of the Azure portal, and App registrations is highlighted on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image48.png "Select App registrations")
+    ![](images2/exercise3/task2/1.png)
+    
+    ![](images2/exercise3/task2/2.png)
 
 2. Select **+New application registration**.
 
@@ -523,7 +525,7 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 7. Copy and record the **Application ID** for later use.
 
-    ![The Application ID and Object ID are highlighted under Essentials for the AzureKeyVaultTest application, and All settings is selected at the bottom.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image50.png "Copy and record the Application ID and Object ID")
+    ![](images2/exercise3/task2/3.png)
 
 8. In the left menu pane, under the **Manage** heading, select **Certificates and secrets** link.
 
