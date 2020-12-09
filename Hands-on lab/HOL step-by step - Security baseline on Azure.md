@@ -369,9 +369,11 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 10. Switch back to the Azure Portal, and select the User_SSN data masking.
 
+    ![](images2/exercise2/task4/1.png)
+
 11. Select **Delete**.
 
-    ![The Delete icon is highlighted under Edit Masking Rule in the Azure portal.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image36.png "Select Delete")
+    ![](images2/exercise2/task4/1_1.png)
 
 12. Select **Save**.
 
