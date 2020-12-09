@@ -323,7 +323,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 4. Under **Security**, select **Dynamic Data Masking**, then select **+Add Mask**.
 
-    ![Dynamic Data Masking is highlighted on the left, and +Add mask is highlighted on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image31.png "Select +Add mask")
+    ![](images2/exercise2/task3/1.png)
 
 5. Select the **User** table.
 
@@ -331,7 +331,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 7. Select **Add**.
 
-    ![Add is highlighted at the top of the SSN column, and the User table and SSN column are highlighted below.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image32.png "Select Add")
+    ![](images2/exercise2/task3/)
 
 8. Select **Save**, then select **OK**.
 
