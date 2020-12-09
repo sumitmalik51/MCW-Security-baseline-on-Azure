@@ -265,7 +265,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 21. Run the script to create a login called **agent**.
 
-22. Browse to the extracted folder, select the **\\Hands-on lab\\Database\\01\_CreateUser.sql** file.
+22. Browse to the extracted folder, select the **C:\MCW-Security-baseline-on-Azure\Hands-on lab\Database\01_CreateUser.sql** file.
 
 23. Ensure that the **Insurance** database is selected.
 
