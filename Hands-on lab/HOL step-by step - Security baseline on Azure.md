@@ -461,7 +461,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 29. Select your Azure Key Vault, and then select **Keys**. You should see the key created from the SQL Management Studio displayed:
 
-    ![CloudSecurityVault is selected on the left, Keys is selected under Settings from the center menu, and CMKAuto1 is selected under the Unmanaged list on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image44.png "Select your Azure Key Vault")
+    ![](images2/exercise2/task4/3.png)
 
 ## Exercise 3: Migrating to Azure Key Vault
 
