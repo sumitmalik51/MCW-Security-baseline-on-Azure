@@ -1074,24 +1074,6 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
 12. Lastly, after you have created the new Playbook, ensure that the status is **Enabled**.  If not, then select **Enable** in the menu.
 
-### Task 5: Execute Jupyter Notebooks
-
-1. In the **Azure Sentinel** blade, select **Notebooks**.
-
-2. Search for the **Getting Started with Azure Sentinel Notebooks** item.
-
-3. In the right dialog, select **Launch Notebook**.
-
-4. If not already logged in, select your Azure credentials, the GitHub repo will start to clone into your workspace. You will see the GitHub progress meter.
-
-    ![The GitHub progress meter is displayed.](media/2020-01-12-18-06-26.png "GitHub Progress Meter")
-
-5. The notebook should open in the Jupyter notebooks application. It will also start a container kernel for executing the notebook cells.
-
-6. Follow the directions of the notebook while executing each cell. The notebook will required you to setup some supported API accounts to merge external security data such as known bad actors and other geographical information.
-
-    ![The getting started Sentinel notebook is displayed.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/jupyter-sentinel.png "Run the notebook steps")
-
 ### Task 6: Creating reports with Power BI
 
 1. Navigate back to your **Azure Sentinel** browser window.  Select **Logs**.
