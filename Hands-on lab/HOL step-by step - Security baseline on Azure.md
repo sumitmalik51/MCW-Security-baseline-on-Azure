@@ -549,7 +549,7 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 3. Select **+ Add Access Policy**.
 
-    ![In the Access policies screen, the + Add Access Policy button is selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image51.png "Add a new access policy")
+    ![](images2/exercise2/task4/1_2.png)
 
 4. Choose **Select principal** field value. In the right-hand pane, type **AzureKeyVaultTest**. Select the item.
 
