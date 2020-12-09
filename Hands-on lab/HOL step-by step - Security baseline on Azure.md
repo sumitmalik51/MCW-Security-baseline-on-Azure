@@ -259,7 +259,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
     ![In SQL Management Studio, Open is selected in the File menu, and File is selected in the shortcut menu.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image27.png "Open a file")
 
-19. Browse to the extracted GitHub folder, select the **\\Hands-on lab\\Database\\00\_CreateLogin.sql** file.
+19. Browse to the extracted GitHub folder, select the **C:\MCW-Security-baseline-on-Azure\Hands-on lab\Database\00_CreateLogin.sql** file.
 
 20. Ensure that the **master** database is selected.
 
