@@ -331,7 +331,7 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 7. Select **Add**.
 
-    ![](images2/exercise2/task3/)
+    ![](images2/exercise2/task3/2.png)
 
 8. Select **Save**, then select **OK**.
 
