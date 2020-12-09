@@ -273,27 +273,41 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
 
 ### Task 2: Test the web application solution
 
-1. In the extracted directory, double-click the **\\Hands-on lab\\WebApp\\InsuranceAPI\\InsuranceAPI.sln** solution file, and Visual Studio will open.
+1. In the extracted directory, double-click the **C:\MCW-Security-baseline-on-Azure\Hands-on lab\WebApp\\InsuranceAPI\\InsuranceAPI.sln** solution file, and Visual Studio will open.
 
     > **Note**: If prompted, login using your Azure / MSDN account.
 
 2. In the **Solution Explorer**, navigate to and double-click the **Web.config** file to open it.
 
     ![Web.config is highlighted under the InsuranceAPI project in Solution Explorer.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image28.png "Open Web.config")
+    
+3. Change the IIS express to host in **Google Chrome**. Check the below image to do it.
 
-3. Update the web.config (line 77) to point to the **Insurance** database created in Task 2. You should only need to update the server name to point to your Azure SQL Server.
+    ![](images2/exercise2/task2/1.png)
+
+4. Update the web.config (line 77) to point to the **Insurance** database created in Task 2. You should only need to update the server name to point to your Azure SQL Server. Do this by following the next two steps.
 
     ![Line 72 of the Insurance database is highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image29.png "Update the server name in Web.config")
 
-4. Press **F5** to run the **InsuranceAPI** solution.
+4. Find the below in the connection string.Replace it with the azure sql server.
+
+    ![](images2/exercise2/task2/2.png)
+
+5. After changing it should look like this.
+
+    ![](images2/exercise2/task2/3.png)
+
+6. Press **F5** to run the **InsuranceAPI** solution.
 
     > **Note**: If you get an CSC error, right-click the project, select **Clean**.  Next, right-click the project and select **Rebuild**.
 
-5. Test the API for a response by browsing to `http://localhost:24448/api/Users`. Your port number may be different from _24448_. You should see several records returned to the browser. Copy a `UserId` value for the next instruction.
+   ![](images2/exercise2/task2/4.png)
 
-    ![The sample JSON response is returned.](media/2019-12-18-16-59-47.png "Sample JSON Response")
+7. Test the API for a response by browsing to `http://localhost:24448/api/Users`. Your port number may be different from _24448_. You should see several records returned to the browser. Copy a `UserId` value for the next instruction.
 
-6. In the browser window that opens, browse to `http://localhost:24448/api/Users/e91019da-26c8-b201-1385-0011f6c365e9` you should see a json response that shows an unmasked SSN column.
+    ![](images2/exercise2/task2/5.png)
+
+8. In the browser window that opens, browse to `http://localhost:24448/api/Users/e91019da-26c8-b201-1385-0011f6c365e9` you should see a json response that shows an unmasked SSN column.
 
     > **Note**: Depending on your browser, you may need to download to view the json response.
 
