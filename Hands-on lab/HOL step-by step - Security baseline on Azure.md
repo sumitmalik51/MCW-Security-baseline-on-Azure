@@ -420,20 +420,24 @@ In this exercise, attendees will utilize Azure SQL features to data mask databas
     - Select **Access policies**.
 
     - Select **Add New**.
+    
+        ![](images2/exercise2/task4/1_2.png)
 
     - For the principal, select your account.
 
     - Select **Key permissions**, and choose **Select all**.
 
-        ![Select all is selected and highlighted under Key permissions, and below that, Decrypt, Encrypt, Unwrap Key, Wrap Key, Verify, and Sign are selected and highlighted under Cryptographic Operations amid the other selected options.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image40.png "Select all")
-
     - Select **Secret permissions**, and choose **Select all**.
 
     - Select **Certificate permissions**, and choose **Select all**.
 
-    - Select **OK**.
+    - Select **Add**.
+    
+        ![](images2/exercise2/task4/2.png)
 
     - Select **Save**.
+    
+        ![](images2/exercise2/task4/2_1.png)
 
     - Retry the operation.
 
