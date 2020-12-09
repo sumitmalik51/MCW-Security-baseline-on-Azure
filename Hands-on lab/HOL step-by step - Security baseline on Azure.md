@@ -115,18 +115,39 @@ In this exercise, attendees will secure a Privileged Access Workstation (PAW) wo
 
 1. In a browser, navigate to your Azure portal (<https://portal.azure.com>).
 
-2. Select **Security Center,** then under **Cloud Security** select **Azure defender** and then select Just-In-time-Vm access.
+2. Search for Security center in the search bar.
 
-    ![Security Center is highlighted on the left side of the Azure portal, and Just in time VM access is highlighted to the right.](images/1.png "Security Center VM Access")
+    ![](images2/exercise1/1.png)
+    
+3. First it will show the upgrade page so please upgrade by scrolling down, selecting your subscription and clicking on **upgrade** .
 
+   ![](images2/exercise1/2.png)
+   
+   ![](images2/exercise1/3.png)
+   
+   ![](images2/exercise1/4.png)
+   
+4. Click on **install agents** which pop-up.
 
-4. In the configuration window that opens, review the settings, then select **Save**.
+    ![](images2/exercise1/5.png)
 
-    ![In the configuration window, port settings are listed, and Save is highlighted above them.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image10.png "Select Save")
+5. Search for virtual machines and **Enable JIT VM access** manually for db-1, paw-1, web-1. Find **Configuration** in each virtual machine and click on **Enable just in time**. Dont forget to enable for db-1, paw-1 and web-1.
 
-5. After a few minutes, you should see the virtual machines moved to the **Configured** tab.
+    ![](images2/exercise1/6.png)
+
+6. After a few minutes, you should see the virtual machines moved to the **Configured** tab.
 
     ![The virtual machines are now on the configured tab.](images/2.png "The JIT Configured VMs are displayed")
+
+7. Select on the ellinios button at te end of one of the virtual machines and click on **Edit** and click on **Add** and add the ports **22, 5985 and 5986** .
+
+    ![](images2/exercise1/7.png)
+    
+    ![](images2/exercise1/8.png)
+    
+8. After adding all the ports click on **Save**.
+
+    ![](images2/exercise1/9.png)
 
 ### Task 2: Perform a JIT request
 
