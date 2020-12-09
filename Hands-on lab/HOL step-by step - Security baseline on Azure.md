@@ -475,11 +475,9 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 2. Select **Key Vaults**, then select your Azure Key Vault.
 
-    ![Key vaults is highlighted on the left side of the Azure portal, and CloudSecurityVault is highlighted on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image45.png "Select your Azure Key Vault")
-
 3. Select **Secrets**, then select **+Generate/Import**.
 
-    ![Secrets is highlighted on the left side of the Azure portal, and Generate/Import is highlighted on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image45.1.png "Create a new secret")
+    ![](images2/exercise3/task1/1.png)
 
 4. For the **Upload Options**, select **Manual**.
 
@@ -489,17 +487,21 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 7. Select **Create**.
 
+    ![](images2/exercise3/task1/2.png)
+
 8. Select **Secrets**.
 
 9. Select **InsuranceAPI**.
 
+    ![](images2/exercise3/task1/2_1.png)
+
 10. Select the current version.
 
-    ![The current version is selected with a status of Enabled under InsuranceAPI Versions.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image46.png "Select the current version")
+    ![](images2/exercise3/task1/2_2.png)
 
 11. Copy and record the secret identifier URL for later use:
 
-    ![The Secret Identifier URL is highlighted under Properties.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image47.png "Copy and record the secret identifier URL")
+    ![](images2/exercise3/task1/3.png)
 
 ### Task 2: Create an Azure Active Directory application
 
