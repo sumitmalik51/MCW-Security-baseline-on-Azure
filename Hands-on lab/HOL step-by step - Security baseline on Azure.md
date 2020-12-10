@@ -1096,25 +1096,31 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
     >**Note**: You may see a **Welcome to Log Analytics** splash page in the blade.  Select **Get Started**.
 
-    ![The screenshot displays the Welcome to Log Analytics blade.](media/2020-01-12-19-14-49.png "Welcome to Log Analytics")
+    ![](images2/exercise5/task6/no1.png)
 
-2. In the **Schema** tab under **Active**, expand the **LogManagement** node, notice the various options available.
+2. In the **Tables** tab, expand the **LogManagement** node, notice the various options available.
 
-3. In the schema window, select **AzureDiagnostics**, then choose the **eye** icon.
+3. Expand **AzureDiagnostics**, then choose the **eye** icon. Then Click on the **Preview Data**.
 
-4. In the top right, select **Export**, then select the **Export to Power BI (M Query)** link.
+    ![](images2/exercise5/task6/1.png)
 
-    ![The Azure Sentinel Logs screen is displayed. The logs item is selected in the left menu. LogManagement and AzureDiagnostics are selected from the active schema list. The Azure Diagnostics item has an eye icon. A new query tab is shown with the Export item highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image103.png "Export a Power BI report query")
+4. Click on the **See in query editor**.
 
-    ![The Export item is expanded with the Export to PowerBI (M Query) item highlighted.](media/2020-01-12-19-17-28.png "Export to PowerBI")
+    ![](images2/exercise5/task6/2.png)
+    
+    ![](images2/exercise5/task6/3.png)
 
-5. Select **Open**, a text document with the Power Query M Language will be displayed.
+5. In the top right, select **Export**, then select the **Export to Power BI (M Query)** link.
 
-6. Follow the instructions in the document to execute the query in Power BI.
+    ![](images2/exercise5/task6/4.png)
+
+6. Select **Open**, a text document with the Power Query M Language will be displayed.
+
+7. Follow the instructions in the document to execute the query in Power BI.
 
     ![The instructions at the top of the PowerBIQuery.txt file are highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image88.png "Follow the query instructions")
 
-7. Close **Power BI**.
+8. Close **Power BI**.
 
 ## Exercise 6: Using Compliance Tools (Azure Policy, Secure Score and Compliance Manager)
 
