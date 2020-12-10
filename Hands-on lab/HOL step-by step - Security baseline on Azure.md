@@ -1026,15 +1026,17 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
 3. Select the new **PortScans** incident.
 
-    ![In the Azure Sentinel Incidents window, the most recent PortScans security alert is selected from the table.](media/2020-01-12-13-30-12.png "View the new PortScans alert")
+    ![](images2/exercise5/task3/1.png)
 
     > **Note**: It may take 15-20 minutes for the alert to fire. You can continue to execute the port scan script to cause log events or you can lower the threshold for the custom alert.
 
 4. In the dialog, choose **Investigate**. Note that it may take a few minutes for the button to be available.
 
-    ![The incident dialog is displayed with the Investigate button selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image76.png "Investigate an incident")
+    ![](images2/exercise5/task3/2.png)
 
 5. In future versions, you will get to see insights about the alerts and the resources related to what caused it to fire:
+
+   > **Note**: Diagram can vary
 
     ![The Azure Security Insights screen is displayed detailing the lifetime of an alert instance.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image77.png)
 
