@@ -1046,7 +1046,7 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
 2. In the new window, select **+ Add Playbook**.
 
-    ![The playbooks blade is displayed with the Playbooks item selected in the left hand menu and the + Add Playbook button selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image79.png)
+    ![](images2/exercise5/task4/1.png)
 
 3. The **Create logic app** blade will display:
 
@@ -1056,19 +1056,19 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
     - Toggle the **Log Analytics** to **On** and then select your **azuresecurity** Log Analytics workspace.
 
-   ![The information above is entered in the Create logic app blade.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image80.png "Enter Create logic app information")
+   ![](images2/exercise5/task4/2.png)
 
 4. Select **Review + Create** then select **Create**.  After a few moments, the **Logic Apps Designer** will load. If the designer does not load, wait a few minutes and refresh the Playbook list. Select the **Email** playbook.
 
-    ![The playbooks list is displayed and the Email playbook is highlighted.](media/2020-01-12-14-40-13.png "Playbook List")
+    ![](images2/exercise5/task4/3.png)
 
-5. Select the **Get a notification email when Security Center detects a threat** template.
+5. Select the **Get a notification email when Security Center detects a threat** template. Scroll down to find it.
 
-    ![The Logic Apps Designer screen is displayed with a list of templates. The Get a notification email when Security Center detects a threat template is selected.](media/2020-01-12-14-44-52.png "Select Use this template")
+    ![](images2/exercise5/task4/4_final.png)
 
 6. Select **Use this template**.
 
-    ![The Use this template button is selected under Send notification email with alert details from Azure Security Center.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image82.png "Select Use this template")
+    ![](images2/exercise5/task4/5.png)
 
 7. For the **Office 365 Outlook** connection, select the **+** link, enter your Azure/O365 credentials.
 
@@ -1080,13 +1080,13 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
 9. Select **Continue**.
 
-    ![The Logic app connection blade is displayed.  Outlook and Azure Security Center validation are displayed.](media/2020-01-12-14-51-29.png "Logic App Connection Information")
+    ![](images2/exercise5/task4/6.png)
 
 10. For the email address, enter your email.
 
 11. Select **Save**. You now have an email alert action based on LogicApps for your custom security alert to use.
 
-    ![Save is highlighted in Logic Apps Designer, and information about the custom security alert appears below.](media/2020-01-12-14-54-20.png "Save the email alert action")
+    ![](images2/exercise5/task4/7.png)
 
 12. Lastly, after you have created the new Playbook, ensure that the status is **Enabled**.  If not, then select **Enable** in the menu.
 
