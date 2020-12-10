@@ -831,6 +831,8 @@ In this exercise, attendees will utilize Network Security Groups to ensure that 
       - Select **Save**.
 
        ![](images2/exercise4/task2/2.png)
+       
+       ![](images2/exercise4/task2/3.png)
 
 ### Task 3: Test network security group rules \#2
 
