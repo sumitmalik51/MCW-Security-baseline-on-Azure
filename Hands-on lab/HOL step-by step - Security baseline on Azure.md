@@ -1224,13 +1224,15 @@ In this exercise, attendees will learn to navigate the Azure Policy and Secure S
 
 ### Task 3: Secure Score
 
-1. In the Azure Portal, select **All Services**, then type **Security**, select **Security Center**.
+1. In the Azure Portal, in the search bar type **Security**, select **Security Center**.
 
-2. In the Security Center blade, under **POLICY & COMPLIANCE**, select **Secure score**.
+    ![](images2/exercise6/task3/1.png)
+
+2. In the Security Center blade, under **Cloud Security**, select **Secure score**.
 
 3. Review your overall secure score values and then notice the category values.
 
-    ![Screen shot showing Secure score blade and the score and categories highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image115.png "Review Secure Score score and categories")
+    ![](images2/exercise6/task3/2.png)
 
 4. On the bottom half of the window, select your subscription, you will be presented with the items that have failed resource validation sorted by the score value that is assigned to that particular recommendation item.
 
