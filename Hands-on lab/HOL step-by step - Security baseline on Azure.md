@@ -967,7 +967,7 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
 1. Navigate back to the **Azure Sentinel** workspace, in the **Configuration** blade section, select **Analytics** then select **+Create** then **Scheduled query rule**.
 
-    ![In the left menu beneath Configuration the Analytics item is selected. To the right, the + Create button is expanded and the Scheduled query rule item is selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image96.png "Adding a analytics alert")
+    ![](images2/exercise5/task2/1.png)
 
 2. On the **General** tab, enter **PortScans** for the name.
 
@@ -1016,7 +1016,7 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
     > **Note**:  It may take a few minutes for the alert to fire.  You may need to run the PortScan script a few times from **paw-1**
 
-    ![In the Azure Sentinel Analytics screen beneath the Active Rules tab, the PortScans rule is highlighted in the table and its status shows it is Enabled.](media/2020-01-12-13-03-56.png "PortScan configured")
+    ![](images2/exercise5/task2/2.png)
 
 ### Task 3: Investigate a custom alert incident
 
