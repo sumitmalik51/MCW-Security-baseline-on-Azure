@@ -886,19 +886,21 @@ In this exercise, attendees will utilize Network Security Groups to ensure that 
 
 2. In the context menu, select **Network Watcher**.
 
-    ![Network watcher is selected from the filtered list of services.](media/2020-01-12-12-06-30.png "Network watcher search result")
+    ![](images2/exercise4/task5/1.png)
 
 3. Expand the subscription regions item you are running your labs in.
 
-4. For the **East US** region (or whatever region you deployed your VMs too), select the ellipsis, then select **Enable network watcher**.
+    ![](images2/exercise4/task5/1_1.png)
 
-    ![The East US row is highlighted under Region, and Enable network watcher is selected in the submenu.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image68.png "Enable Network Watcher")
+4. For the **East US** region (or whatever region you deployed your VMs too), select the ellipsis, then select **Enable network watcher**. Mostly it will be enabled for your particular location.
+
+    ![](images2/exercise4/task5/1_2.png)
 
 5. In the new context menu, select **Packet capture**.
 
 6. Select **+Add**.
 
-    ![Packet capture is selected and highlighted on the left under Network Diagnostic Tools, and + Add is highlighted at the top right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image69.png "Add a packet capture")
+    ![](images2/exercise4/task5/2.png)
 
 7. Select your subscription.
 
@@ -916,9 +918,11 @@ In this exercise, attendees will utilize Network Security Groups to ensure that 
     - Maximum bytes per session: 1073741824.
     - Time limit: 600.
 
-    ![In the Add packet capture window, databasetraffic is entered in the Packet capture name box, and the Storage account check box is checked.](/Hands-on%20lab/images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/packetcapture.png "Dialog box screenshot")
+    ![](images2/exercise4/task5/3.png)
+    
+    ![](images2/exercise4/task5/4.png)
 
-13. Select **OK**.
+13. Select **Save**.
 
 
 ## Exercise 5: Azure Sentinel logging and reporting
