@@ -149,6 +149,7 @@ In this exercise, attendees will secure a Privileged Access Workstation (PAW) wo
 
     ![](images2/exercise1/9.png)
 
+9. Please do steps 7 and 8 only for **paw-1** vm.
 ### Task 2: Perform a JIT request
 
 1. Select the **paw-1** virtual machine, and then select **Request access**.
