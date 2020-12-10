@@ -1132,33 +1132,33 @@ In this exercise, attendees will learn to navigate the Azure Policy and Secure S
 
 1. Open the [Azure Portal](https://portal.azure.com).  Select **All Services**, then type **policy**.  Select **Policy** in the list of items.
 
-    ![All services are selected in the left menu. In the search box policy is entered. Policy is selected from the filtered list of services.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image104.png "Open the Azure Policy blade")
+    ![](images2/exercise6/task1/1.png)
 
 2. In the blade menu, select **Compliance**, and review your **Overall resource compliance** percentage.
 
-    ![The Compliance item is selected from the left menu. The Policy compliance screen is displayed.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image105.png "Open the Azure Policy blade")
+    ![](images2/exercise6/task1/2.png)
 
-3. For the scope, ensure the proper subscription is selected, then select **ASC Default (subscription:**.
+3. For the scope, ensure the proper subscription is selected.
 
-4. In the **Initiative compliance** blade, review your compliance metrics.
+4. Click on the row having compliance state as **non-compliant**.
 
-5. Scroll to the results area and select the **Non-compliant resources** tab.
+    ![](images2/exercise6/task1/2_1.png)
 
-    ![The non-compliant resources tab is highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image106.png "Select the Non-Compliant resources tab")
-
-6. In the filter search box, type **paw-1** and select it when displayed.
+6. Click on **paw-1** or any other resource with non-compliant state.
 
     > **Note**: You may not see resources display right away.  If this is the case, then scroll through some other non-compliant resources.
+    
+    ![](images2/exercise6/task1/3.png)
 
 7. With the **Policies** tab selected, review the policies that the resource is non-complying against.
 
     >**Note**: New policies are being created and your number may be different from the image below.
 
-    ![The Resource compliance blade for paw-1 is displayed with the non-compliant items highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image107.png "Review the non-compliant items")
+    ![](images2/exercise6/task1/4.png)
 
 8. Choose one of the policies.  Review the Definition JSON of the policy definition, notice how it is based on ARM Template format and is looking for specific properties to be set of the non-compliant resources.
 
-    ![The policy definition is displayed in JSON format.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image108.png "Review the policy definition")
+    ![](images2/exercise6/task1/5.png)
 
     > **Note**: You can use these out of box templates to build your own policies and apply them as blueprints.
 
