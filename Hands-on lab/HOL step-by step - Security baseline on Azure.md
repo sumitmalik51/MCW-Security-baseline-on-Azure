@@ -51,14 +51,12 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 3: Test network security group rules \#2](#task-3-test-network-security-group-rules-2)
     - [Task 4: Install network watcher VM extension](#task-4-install-network-watcher-vm-extension)
     - [Task 5: Setup network packet capture](#task-5-setup-network-packet-capture)
-    - [Task 6: Execute a port scan](#task-6-execute-a-port-scan)
   - [Exercise 5: Azure Sentinel logging and reporting](#exercise-6-azure-sentinel-logging-and-reporting)
     - [Task 1: Create a dashboard](#task-1-create-a-dashboard)
     - [Task 2: Create an Analytics alert](#task-2-create-an-analytics-alert)
     - [Task 3: Investigate a custom alert incident](#task-3-investigate-a-custom-alert-incident)
     - [Task 4: Create and run a playbook](#task-4-create-and-run-a-playbook)
-    - [Task 5: Execute Jupyter Notebooks](#task-5-execute-jupyter-notebooks)
-    - [Task 6: Creating reports with Power BI](#task-6-creating-reports-with-power-bi)
+    - [Task 5: Creating reports with Power BI](#task-6-creating-reports-with-power-bi)
   - [Exercise 6: Using Compliance Tools (Azure Policy, Secure Score and Compliance Manager)](#exercise-7-using-compliance-tools-azure-policy-secure-score-and-compliance-manager)
     - [Task 1: Review a basic Azure Policy](#task-1-review-a-basic-azure-policy)
     - [Task 2: Review and create Azure Blueprints](#task-2-review-and-create-azure-blueprints)
@@ -1091,7 +1089,7 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
 12. Lastly, after you have created the new Playbook, ensure that the status is **Enabled**.  If not, then select **Enable** in the menu.
 
-### Task 6: Creating reports with Power BI
+### Task 5: Creating reports with Power BI
 
 1. Navigate back to your **Azure Sentinel** browser window.  Select **Logs**.
 
