@@ -1166,7 +1166,7 @@ In this exercise, attendees will learn to navigate the Azure Policy and Secure S
 
 1. In the Policy blade, under **Authoring**, select **Definitions**.  These are a list of all defined policies which can be selected for assignment to your subscription resources.
 
-    ![A listing of policy definitions on the Policy Blade Definitions screen.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image109.png "Review available policy definitions")
+    ![](images2/exercise6/task2/1.png)
 
 2. In the Policy blade, under **Related Services**, select **Blueprints**.
 
@@ -1174,11 +1174,11 @@ In this exercise, attendees will learn to navigate the Azure Policy and Secure S
 
 4. Select **+Create blueprint**.
 
-    ![The Blueprint definitions screen is displayed with the Blueprint definitions item selected from the left menu. The + Create blueprint menu item is selected.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image110.png "Create a new blueprint")
+    ![](images2/exercise6/task2/2.png)
 
 5. Review some of the sample blueprints, then select **Start with blank blueprint**.
 
-    ![The Create blueprint screen is displayed with the Blank blueprint item selected from the list of available samples.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image111.png "Create a blank blueprint")
+    ![](images2/exercise6/task2/3.png)
 
 6. For the name, type **gdprblueprint**.
 
@@ -1186,33 +1186,39 @@ In this exercise, attendees will learn to navigate the Azure Policy and Secure S
 
 8. Choose **Select**.
 
-    ![New blue print dialog with name and location filled in.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image112.png "Set blueprint fields")
+    ![](images2/exercise6/task2/4.png)
 
 9. Select **Next: Artifacts**.
+
+    ![](images2/exercise6/task2/5.png)
 
 10. Select **+ Add artifact**.
 
 11. For the Artifact Type, select **Policy assignment**, review all the policies available to you (at the time of this writing you would see 37 definitions and 311 policies).
 
-12. In the search box, type **unrestricted**, browse for the **Audit unrestricted network access to storage accounts**.
-
-    ![On the Create blueprint screen, on the Artifacts tab the + Add artifact link is selected beneath the Subscription. In the Add artifact blade, the artifact type of Policy assignment is selected. In the Search textbox, unrestricted is entered. Beneath the Search textbox, the Policy Definitions tab is selected and the Audit unrestricted network access to storage accounts is selected from the list of search results.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image113.png "Add an artifact")
+12. In the search box, type **storage accounts**, browse for the **storage accounts should restrict network access using virtual network rules**.
 
 13. Select **Add**.
 
+    ![](images2/exercise6/task2/6.png)
+
 14. Select **Save Draft**. It may take a few minutes.  The blade will automatically change when the save operation finishes.
+
+    ![](images2/exercise6/task2/7.png)
 
 15. For the new blueprint, select the ellipses, then select **Publish blueprint**.
 
-    ![The ellipses menu is expanded for the gdprblueprint blueprint item with the Publish blueprint menu item highlighted.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image114.png "Publish blueprint dialog")
+    ![](images2/exercise6/task2/8.png)
 
 16. Select **Publish**.
 
 17. For the version type **1.0.0**.
 
+    ![](images2/exercise6/task2/9.png)
+
 18. For the new blueprint, select the ellipses, then select **Assign Blueprint**.
 
-    ![Screen shot showing the Assign blueprint dialog.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image114.png "Assign blueprint dialog")
+    ![](images2/exercise6/task2/10.png)
 
 19. Review the page, then choose **Assign**.  This policy will now be audited across all your storage accounts in the specific subscription.
 
