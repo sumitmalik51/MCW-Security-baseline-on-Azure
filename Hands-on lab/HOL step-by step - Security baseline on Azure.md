@@ -937,11 +937,13 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
 2. Select **All services**, then type **Sentinel**, select **Azure Sentinel**.
 
-    ![All Services is selected in the left menu, and a search for Sentinel is displayed along with its search results.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image94.png "Searching for Sentinel")
+    ![](images2/exercise5/task1/1.png)
 
-3. In the blade, select **+Add**, select the **Log Analytics** resource for your resource group, then choose **Add Azure Sentinel**.
+3. In the blade, select **+Add**, select the **Log Analytics** resource for your resource group, then click **Add**.
 
-   ![The screenshot displays the Azure workspace found in the resource group.](media/2020-01-12-12-54-25.png "Azure Workspace")
+    ![](images2/exercise5/task1/2.png)
+    
+    ![](images2/exercise5/task1/2_1.png)
 
 4. In the blade, under **Threat Management**, select **Workbooks**.
 
@@ -949,11 +951,13 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
 6. Select the region and select **OK**.
 
-    ![In the left menu beneath Threat Management the Workbooks item is selected and the Azure AD Audit Logs item is selected beneath the Templates tab on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image95.png "Adding a workbook")
+    ![](images2/exercise5/task1/3_final.png)
 
 7. In the list of workbooks, select **Azure Network Watcher**, choose **Save**.
 
 8. Select the region and choose **OK**.
+
+    ![](images2/exercise5/task1/4.png)
 
 9. Select **View saved workbook**, take a moment to review your new workbook.
 
