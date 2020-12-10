@@ -818,7 +818,7 @@ In this exercise, attendees will utilize Network Security Groups to ensure that 
 
        - In the content menu, select **Diagnostic logs**, and then select **Add diagnostic setting**.
 
-        ![Diagnostics settings is selected under Monitoring on the left side, and Add diagnostics settings is selected on the right.](media/2019-12-19-18-53-52.png "Add diagnostic settings")
+        ![](images2/exercise4/task2/1.png)
 
       - For the name, enter the NSG name and then add **Logging** to the end.
 
@@ -830,7 +830,7 @@ In this exercise, attendees will utilize Network Security Groups to ensure that 
 
       - Select **Save**.
 
-       ![Save is highlighted at the top, and two log items are selected below.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image60.png "Save the logs")
+       ![](images2/exercise4/task2/2.png)
 
 ### Task 3: Test network security group rules \#2
 
