@@ -864,17 +864,21 @@ In this exercise, attendees will utilize Network Security Groups to ensure that 
 
 4. In the blade menu, select **Extensions**, then select **+Add**.
 
-    ![Extensions is selected on the left under Settings, and + Add is highlighted at the top right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image64.png "Select + Add")
+    ![](images2/exercise4/task4/1.png)
 
 5. Browse to the **Network Watcher Agent for Windows**, and select it.
 
 6. Select **Create**.
 
-    ![Network Watcher Agent for Windows is highlighted on the left, and Create is highlighted on the right.](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image65.png "Create a Network Watcher agent")
+    ![](images2/exercise4/task4/2.png)
+    
+    ![](images2/exercise4/task4/2_1.png)
 
 7. In the next **Install extension** dialog window (note that it could be blank) select **OK.** You should see a dialog toast notification about the script extension being installed into the Virtual Machine.
 
-    ![The toast notification states: "Deployment in progress ... Deployment to resource group 'azure-securitytest1' is in progress."](images/Hands-onlabstep-bystep-Azuresecurityprivacyandcomplianceimages/media/image66.png "Toast notification about the script installation")
+    ![](images2/exercise4/task4/3.png)
+    
+    ![](images2/exercise4/task4/4.png)
 
 ### Task 5: Setup network packet capture
 
