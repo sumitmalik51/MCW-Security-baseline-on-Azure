@@ -133,11 +133,13 @@ In this exercise, attendees will secure a Privileged Access Workstation (PAW) wo
 
     ![](images2/exercise1/6.png)
 
-6. After a few minutes, you should see the virtual machines moved to the **Configured** tab.
+6. Go back to security center, -> from the left hand menu under **cloud security**, select **Azure defender**, scroll down and select Just in time vm access. After a few minutes, you should see the virtual machines in the **Configured** tab.
+
+    ![](images2/exercise1/task1_new1.png)
 
     ![The virtual machines are now on the configured tab.](images/2.png "The JIT Configured VMs are displayed")
 
-7. Go back to security center, -> from the left hand menu under cloud security, select Azure defender, scroll down and select Just in time vm access and Select on the ellinios button at the end of one of the virtual machines and click on **Edit** and click on **Add** and add the ports **22, 5985 and 5986**.
+7. Select on the ellinios button at the end of **paw-1** virtual machine and click on **Edit** and click on **Add** and add the ports **22, 5985 and 5986**.
 
     ![](images2/exercise1/7.png)
     
