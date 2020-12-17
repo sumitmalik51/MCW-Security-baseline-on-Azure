@@ -1197,11 +1197,11 @@ In this exercise, attendees will learn to navigate the Azure Policy and Secure S
 
 11. For the Artifact Type, select **Policy assignment**, review all the policies available to you (at the time of this writing you would see 37 definitions and 311 policies).
 
-12. In the search box, type **storage accounts**, browse for the **storage accounts should restrict network access using virtual network rules**.
+12. In the search box, type **storage accounts**, browse for the **Storage accounts should restrict network access**.
 
 13. Select **Add**.
 
-    ![](images2/exercise6/task2/6.png)
+    ![](images2/exercise6/task2/policy-blueprint-new.png)
 
 14. Select **Save Draft**. It may take a few minutes.  The blade will automatically change when the save operation finishes.
 
