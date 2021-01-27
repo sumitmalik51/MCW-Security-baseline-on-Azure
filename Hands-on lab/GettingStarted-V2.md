@@ -8,10 +8,10 @@
  
     > You will see Suffix/DeploymentID value on **Lab Environment** tab, use it whereever you see SUFFIX or DeploymentID in lab steps.
  
-1. You can also open the Lab Guide on Seprate full window by selcting the **Arrow** icon in upper right corner.
+1. You can also open the Lab Guide on Seprate full window by selcting the **Split Window** icon at the bottom right corner.
 
 
-   ![](media/1.V2.png "Lab Guide")
+   ![](media/4.V2.png "Lab Guide")
  
 ## Login to Azure Portal
 1. In the JumpVM, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
