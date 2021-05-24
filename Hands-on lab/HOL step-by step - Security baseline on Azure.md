@@ -1003,7 +1003,7 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
     > **Note:** We want to hit the threshold quickly for lab purposes. This query and value may not be appropriate for production and is only for learning purposes.
 
-    Review the current data to determine what would trigger the alert.  Notice the red threshold line intersects the blue event data line.
+    Review the current data by clicking on **Test with current data** button from right side to determine what would trigger the alert.  Notice the red threshold line intersects the blue event data line.
 
     ![A chart is displayed showing the current log data and the alert threshold. The red and blue line intersect in the chart.](media/2020-01-12-13-26-17.png "Results Preview")
 
@@ -1043,13 +1043,9 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
 ### Task 4: Create and run a playbook
 
-1. In the **Azure Sentinel** blade, select **Playbooks**.
+1. In the **Azure Sentinel** blade, select **Automation** and then click on **Create** button and select **Add New Playbook**.
 
-2. In the new window, select **+ Add Playbook**.
-
-    ![](images2/exercise5/task4/1.png)
-
-3. The **Create logic app** blade will display:
+2. The **Create logic app** blade will display:
 
     - For the name, enter **Email**.
 
@@ -1059,37 +1055,37 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
    ![](images2/exercise5/task4/2.png)
 
-4. Select **Review + Create** then select **Create**.  After a few moments, the **Logic Apps Designer** will load. If the designer does not load, wait a few minutes and refresh the Playbook list. Select the **Email** playbook.
+3. Select **Review + Create** then select **Create**.  After a few moments, the **Logic Apps Designer** will load. If the designer does not load, wait a few minutes and refresh the Playbook list. Select the **Email** playbook.
 
     ![](images2/exercise5/task4/3.png)
 
-5. Select the **Get a notification email when Security Center detects a threat** template. Scroll down to find it.
+4. Select the **Get a notification email when Security Center detects a threat** template. Scroll down to find it.
 
     ![](images2/exercise5/task4/4_final.png)
 
-6. Select **Use this template**.
+5. Select **Use this template**.
 
     ![](images2/exercise5/task4/5.png)
 
-7. For the **Office 365 Outlook** connection, select the **+** link, enter your Azure/O365 credentials.
+6. For the **Office 365 Outlook** connection, select the **+** link, enter your Azure/O365 credentials.
 
     ![The Sign in button is highlighted next to Office 365 Outlook under This logic app will connect to.](media/2020-01-12-14-48-03.png "Sign in to Office 365 Outlook")
 
     > **Note**: This would need to be a valid Office 365 account, if you do not have a valid Office 365 account, then utilize a basic email template for Outlook.com.
 
-8. For the **Security Center Alert** connection, select the **+** link.
+7. For the **Security Center Alert** connection, select the **+** link.
 
-9. Select **Continue**.
+8. Select **Continue**.
 
     ![](images2/exercise5/task4/6.png)
 
-10. For the email address, enter your email.
+9. For the email address, enter your email.
 
-11. Select **Save**. You now have an email alert action based on LogicApps for your custom security alert to use.
+10. Select **Save**. You now have an email alert action based on LogicApps for your custom security alert to use.
 
     ![](images2/exercise5/task4/7.png)
 
-12. Lastly, after you have created the new Playbook, ensure that the status is **Enabled**.  If not, then select **Enable** in the menu.
+11. Lastly, after you have created the new Playbook, ensure that the status is **Enabled**.  If not, then select **Enable** in the menu.
 
 ### Task 5: Creating reports with Power BI
 
