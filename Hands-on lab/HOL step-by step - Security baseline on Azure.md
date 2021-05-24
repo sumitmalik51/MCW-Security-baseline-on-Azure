@@ -991,7 +991,7 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
     > **Note**: Since the introduction of Azure Security Center and Sentinel, the backend logging has changed a few times as well as the way the calculations are done in the rule query (timespan in query vs outside query, etc.). The ultimate goal of this query is to find when a series of failed connection attempts have been made against a network security group and a specific deny rule. If for some reason the UI/backend has been modified since the last published lab, modify the query to accomplish this goal.
 
-5. Under **Map entities**, for the **IP**, select the **primaryIPv4Address_s** column, then select **Add**.
+5. Under **Entity Mapping**, for the **IP**, select the **primaryIPv4Address_s** column, then select **Add**.
 
 6. Under **Query scheduling**, for the **Run query every** setting, type **5** minutes.
 
