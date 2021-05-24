@@ -608,6 +608,8 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 6. Replace the **ApplicationId** (**ClientId**) and **ClientSecret** with the values from Task 2.
 
+   - Note: Here the ClientSeceret is the keyvault client secret ID in certifications of Azure AD application.
+
     ![The pane is displaying the Application Registration information. ApplicationId is circled.](media/2019-12-19-13-03-01.png "Applicaiton Registration")
 
 7. Replace the **SecretUri** with the Azure Key Vault secret key Uri from Task 1.
@@ -632,29 +634,7 @@ In this exercise, attendees will learn how to migrate web application to utilize
 
 4. Press **F5** to continue the program.
 
-5. Navigate to [http://localhost:portno/api/Users](http://localhost:portno/api/Users), you should get an error. Because you encrypted the column in the previous exercise, EntityFramework is not able to retrieve the value(s) using default settings. In order to do seamless decryption, you would need to:
-
-    - Run the **\\Hands-on lab\\Database\\02\_PermissionSetup.sql** script if you have not already done so.
-
-    - Add the [AzureKeyVaultProvider for Entity Framework](https://blogs.msdn.microsoft.com/sqlsecurity/2015/11/10/using-the-azure-key-vault-key-store-provider-for-always-encrypted/) reference to the project.
-
-    - Register the provider code in order for .NET to handle the encrypted column.
-  
-    - Add an access policy to the Azure Key Vault that gives key permissions (`decrypt`, `sign`, `get`, `unwrapkey`, `verify`) to the Azure AD application.
-
-    - Add the `Column Encryption Setting=Enabled` to the connection string.
-
-    - Detailed steps can be found in this [blog post](https://docs.microsoft.com/en-us/archive/blogs/sqlsecurity/using-the-azure-key-vault-key-store-provider-for-always-encrypted)
-
-    - A third solution (**\\Hands-on lab\\WebApp\\InsuranceAPI\_KeyVault\_Encrypted\\InsuranceAPI.sln**) was added to the GitHub repo that has the necessary references and code added.  
-  
-      - Simply update the web.config file with your client id and secret after adding the required Key Vault permissions above.
-  
-      - Update the Key Vault connection string to have the `Column Encryption Setting=Enabled`.
-
-      - Review the code added to the global.asax.cs file.
-
-      - Run the project and navigate to the above page.
+5. You will see that the app is running fine.
 
 ## Exercise 4: Securing the network
 
