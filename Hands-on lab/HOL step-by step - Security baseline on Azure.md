@@ -940,10 +940,6 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
     ![](images2/exercise5/task1/4.png)
 
-9. Select **View saved workbook**, take a moment to review your new workbook.
-
-    > **Note**: You may not have data in the log analytics workspace for the targeted workbook queries.
-
 ### Task 2: Create an Analytics alert
 
 1. Navigate back to the **Azure Sentinel** workspace, in the **Configuration** blade section, select **Analytics** then select **+Create** then **Scheduled query rule**.
