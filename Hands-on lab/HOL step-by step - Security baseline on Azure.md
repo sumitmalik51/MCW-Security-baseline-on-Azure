@@ -1073,11 +1073,11 @@ In this exercise, you will setup Azure Sentinel to point to a logging workspace 
 
 2. In the **Tables** tab, expand the **LogManagement** node, notice the various options available.
 
-3. Expand **AzureDiagnostics**, then choose the **eye** icon. Then Click on the **Preview Data**.
+3. Expand **AzureDiagnostics**, Then Draw the cursor on **AzureDiagnostics**, now a pop-up will show up.
 
     ![](images2/exercise5/task6/1.png)
 
-4. Click on the **See in query editor**.
+4. Click on the **Use in query editor**, And then run the query to get the results.
 
     ![](images2/exercise5/task6/2.png)
     
